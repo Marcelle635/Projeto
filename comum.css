@@ -86,7 +86,7 @@ body{
 
 /*IMagem do café*/
 .home-container{
-    background: url("principal.png");
+    background: url("img/principal.png");
     height: 100vh;
     background-position: center;
     background-size: cover;

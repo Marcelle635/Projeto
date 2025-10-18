@@ -1,0 +1,44 @@
+.feedback-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+.feedback-section h2 {
+  color: #5b2c06;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.feedback-card {
+  background-color: #d79b56;
+  color: #2e1b0a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 230px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feedback-card p {
+  font-size: 15px;
+  line-height: 1.4;
+}

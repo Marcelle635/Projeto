@@ -108,6 +108,7 @@ body{
     align-items: center;
     background-color: var(--main-color);
     gap: 1.5rem;
+    margin-bottom: 8rem;
 }
 .about .row .content{
     padding: 2rem;
@@ -162,7 +163,7 @@ border: 8px solid black; /* Borda preta mais grossa */  box-shadow:  400px rgba(
 
 }
 .box img{
-    height: 200%; /* Ocupa 70% da altura da box */
+    height: 200%; /* Ocupa % da altura da box */
     width: auto;     /* Largura total */
     object-fit: cover;
     border-radius: 8px;
@@ -209,6 +210,7 @@ border: 8px solid black; /* Borda preta mais grossa */  box-shadow:  400px rgba(
   text-align: center;
   padding: 50px 20px;
   background-color: #fff;
+  margin-bottom: 25rem;
 }
 
 .feedback-section h2 {
@@ -284,8 +286,9 @@ border: 8px solid black; /* Borda preta mais grossa */  box-shadow:  400px rgba(
 }
 
 .footer-col p {
-  line-height: 1.6;
+  line-height: 2;
   font-size: 15px;
+  margin-bottom: 8rem;
 }
 
 .footer-col ul {

@@ -31,46 +31,53 @@
     </div>
     </section>
     </header>   
-</body>
-    <div class="conteudo_principal" id="fundo_cadastro">
+
+    <main class="conteudo_principal" id="conteudo_cadastro">
         <div class="cadastro" id="cadastro-container">
-            <i class="bi bi-person"></i>
-            <h1>Cadastro</h1>    
-                <form class="fomulario" action="/cadastro" method="post">
-                    
-                    <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
-                    
-                    <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
-                  
-                    <input type="text" class="campo" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="TELEFONE CELULAR:(00) 00000-0000" required>
+            <h1>CADASTRE-SE</h1>    
+            <form class="formulario" action="/cadastro" method="post">
+             <label for="nome">NOME COMPLETO:</label>
+             <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
 
-                    <input list="sexos" class="campo" id="sexo" name="sexo" placeholder="SEXO">
-                    <datalist id="sexos">
-                    <option value="Feminino">
-                    <option value="Masculino">
-                    <option value="Prefiro não dizer">
-                    
-                    </datalist>
+             <label for="cpf">CPF:</label>
+             <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
 
-                    <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
+             <label for="telefone">TELEFONE CELULAR:</label>
+             <input type="text" class="campo" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="(00) 00000-0000" required>
 
-                    <input type="text" class="campo" placeholder="DATA DE NASCIMENTO" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
+             <label for="sexo">SEXO:</label>
+             <input list="sexos" class="campo" id="sexo" name="sexo">
+              <datalist id="sexos">
+                <option value="Feminino">
+                <option value="Masculino">
+                <option value="Prefiro não dizer">
+              </datalist>
 
-                    <input type="text" class="campo" id="nome materno" name="nome materno" placeholder="NOME MATERNO:" required>
+             <label for="email">E-MAIL:</label>
+             <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
 
-                    <input type="text" class="campo" placeholder="Data de nascimento" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
-              
-                    <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
-                    
-                    <input type="password" class="campo" id="senha" name="senha" placeholder="Senha:" required>
-                    
-                    <input type="password" class="campo" id="senha" name="senha" placeholder=" confirme a Senha:" required>
-                    
-                    <input type="text" class="campo" id="endereço" name="endereço" placeholder="Endereço completo:" required>
-                   
-                    <button class="botao botao_cadastro" type="submit">ENVIAR</button>
-                   
-                    <button class="botao botao_cadastro" type="reset">LIMPAR TELA</button>
-                </form>
+             <label for="data_nascimento">DATA DE NASCIMENTO:</label>
+             <input type="date" class="campo" id="data_nascimento" name="data_nascimento" required>
+
+             <label for="nome_materno">NOME MATERNO:</label>
+             <input type="text" class="campo" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
+
+             <label for="login">LOGIN:</label>
+             <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
+
+             <label for="senha">SENHA:</label>
+             <input type="password" class="campo" id="senha" name="senha" placeholder="SENHA:" required>
+
+             <label for="confirme">CONFIRME A SENHA:</label>
+             <input type="password" class="campo" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
+
+             <label for="endereco">ENDEREÇO COMPLETO:</label>
+             <input type="text" class="campo" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
+
+             <button type="submit" class="botao botao_cadastro">ENVIAR</button>
+             <button type="reset" class="botao botao_cadastro">LIMPAR TELA</button>
+            </form>
+
         </div>
-    </div>  
+    </main> 
+</body>      

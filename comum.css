@@ -176,6 +176,7 @@ border: 8px solid black; /* Borda preta mais grossa */  box-shadow:  400px rgba(
   gap: 20px;
   padding: 20px 0;
   overflow-x: auto;
+  margin-bottom: 7rem; /* 👈 Adicionado espaçamento abaixo dos cards */
 }
 
 /* Botão */

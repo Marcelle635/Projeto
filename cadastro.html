@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do café</title>
+    <link rel="stylesheet" href="comum.css">
+</head>
+<body>
+    <!--Menu com funcionalidades-->
+    <header class="header">
+    <section>
+
+       <a href="#" class="logo">
+        <img src="img/logo.png" alt="logo">
+       </a>
+   
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="menucomum.html">Menu</a>
+    </nav>
+    <div class="areas">
+        <button id="diminuir-fonte">A-</button>
+        <button id="aumentar-fonte">A+</button> |
+        <a href="">Cadastro</a> |
+        <!--trilho e indicador pra botar o escuro e claro-->        
+        <div class="trilho">
+            <div class="indicador"></div>
+        </div> |
+        <a href="">Login</a>
+    </div>
+    </section>
+    </header>   
+</body>
+    <div class="conteudo_principal" id="fundo_cadastro">
+        <div class="cadastro" id="cadastro-container">
+            <i class="bi bi-person"></i>
+            <h1>Cadastro</h1>    
+                <form class="fomulario" action="/cadastro" method="post">
+                    
+                    <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
+                    
+                    <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
+                  
+                    <input type="text" class="campo" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="TELEFONE CELULAR:(00) 00000-0000" required>
+
+                    <input list="sexos" class="campo" id="sexo" name="sexo" placeholder="SEXO">
+                    <datalist id="sexos">
+                    <option value="Feminino">
+                    <option value="Masculino">
+                    <option value="Prefiro não dizer">
+                    
+                    </datalist>
+
+                    <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
+
+                    <input type="text" class="campo" placeholder="DATA DE NASCIMENTO" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
+
+                    <input type="text" class="campo" id="nome materno" name="nome materno" placeholder="NOME MATERNO:" required>
+
+                    <input type="text" class="campo" placeholder="Data de nascimento" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" required>
+              
+                    <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
+                    
+                    <input type="password" class="campo" id="senha" name="senha" placeholder="Senha:" required>
+                    
+                    <input type="password" class="campo" id="senha" name="senha" placeholder=" confirme a Senha:" required>
+                    
+                    <input type="text" class="campo" id="endereço" name="endereço" placeholder="Endereço completo:" required>
+                   
+                    <button class="botao botao_cadastro" type="submit">ENVIAR</button>
+                   
+                    <button class="botao botao_cadastro" type="reset">LIMPAR TELA</button>
+                </form>
+        </div>
+    </div>  

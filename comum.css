@@ -90,6 +90,7 @@ body{
     height: 100vh;
     background-position: center;
     background-size: cover;
+    margin-bottom: 7rem;
 }
 
 /*Titulo Sobre Nós e Menu*/
@@ -118,8 +119,8 @@ color:var(--black);
 .about .row .content p{
 font-size: 1.8rem;
 color: var(--black);
-padding: 0.4rem 0;
-line-height: 1.8;
+padding: 0.7rem 0;
+line-height: 1.7;
 }
 
 /*Menu e cards*/

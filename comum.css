@@ -37,8 +37,7 @@ body{
     border-bottom: var(--border);
     background-color: var(--black);
 }
-
-.header section{
+.header section {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,42 +45,54 @@ body{
     padding-bottom: 1.5rem;
 }
 
-/*O navbar também faz parte do menu, Home e Menu */
-.navbar a{
-    margin: 0 1rem;
-    font-size: 2rem;
-    color:var(--main-color);
-}
-.navbar a:hover{
-    color: #ffffff;
-    border-bottom: 0.1rem solid #ffffff;
-    padding-bottom: 0.5rem;
-    font-size: 2rem;
+/* Agrupa logo + navbar no lado esquerdo */
+.left-side {
+    display: flex;
+    align-items: center;
 }
 
-/*é o A-, A+, Cadastro, Login */
+/* Logo */
+.logo img {
+    height: 50px; /* ajuste conforme sua logo */
+    margin-right: 2rem;
+}
+
+/* Navegação */
+.navbar a {
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    border-bottom: 0.1rem solid #ffffff;
+    padding-bottom: 0.5rem;
+    font-size: 2.1rem;
+}
+
+/* Lado direito: áreas */
 .areas {
-    margin: 0 1rem;
+    display: flex;
+    align-items: center;
     font-size: 2rem;
-    color:var(--main-color);
+    color: var(--main-color);
 }
-.areas a, button {
+
+.areas a, .areas button {
     margin: 0 1rem;
     font-size: 2rem;
-    color:var(--main-color);
+    color: var(--main-color);
     background-color: #552D0F;
+    border: none;
+    cursor: pointer;
 }
-.areas button:hover{
+
+.areas button:hover,
+.areas a:hover {
     color: #ffffff;
     border-bottom: 0.1rem solid #ffffff;
     padding-bottom: 0.5rem;
-    font-size: 2rem;
-}
-.areas a:hover{
-    color: #ffffff;
-    border-bottom: 0.1rem solid #ffffff;
-    padding-bottom: 0.5rem;
-    font-size: 2rem;
 }
 
 /*IMagem do café*/

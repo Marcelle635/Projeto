@@ -132,8 +132,8 @@ input {
   border-radius: 6px;
 }
 input::placeholder {
-  color: black;      /* cor do texto */
-  opacity: 1;        /* garante que a cor apareça 100% (alguns navegadores deixam opaco) */
+  color: black;   
+  opacity: 1; /* garante que a cor apareça 100% */
 }
 
 

@@ -142,7 +142,7 @@ input {
   margin-top: 20px;
 }
 
-button {
+main button {
   background-color: var(--black);
   color: var(--main-color);
   border: none;
@@ -153,6 +153,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+main button:hover {
   background-color: #4b2e0f;
 }

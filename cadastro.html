@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raízes do café</title>
-    <link rel="stylesheet" href="comum.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raízes do café</title>
+  <link rel="stylesheet" href="comum.css">
 </head>
 <body>
-    <!--Menu com funcionalidades-->
-    <header class="header">
-  <section>
-    <!-- Lado esquerdo: Logo + Navegação -->
-    <div class="left-side">
+  <!--Menu com funcionalidades-->
+  <header class="header">
+    <section>
+     <!-- Lado esquerdo: Logo + Navegação -->
+     <div class="left-side">
       <a href="#" class="logo">
         <img src="img/logo.png" alt="logo">
       </a>
@@ -20,10 +20,10 @@
         <a href="#home">Home</a>
         <a href="menucomum.html">Menu</a>
       </nav>
-    </div>
+      </div>
 
-    <!-- Lado direito: Botões e links -->
-    <div class="areas">
+      <!-- Lado direito: Botões e links -->
+      <div class="areas">
       <button id="diminuir-fonte">A-</button>
       <button id="aumentar-fonte">A+</button> |
       <a href="#">Cadastre-se</a> |
@@ -32,56 +32,56 @@
         <div class="indicador"></div>
       </div> |
       <a href="#">Login</a>
+      </div>
+    </section>
+  </header>
+
+  <main class="conteudo_principal" id="conteudo_cadastro">
+    <div class="cadastro" id="cadastro-container">
+     <h1>CADASTRE-SE</h1>    
+     <form class="formulario" action="/cadastro" method="post">
+       <label for="nome">NOME COMPLETO:</label>
+       <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
+
+       <label for="cpf">CPF:</label>
+       <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
+
+       <label for="telefone">TELEFONE CELULAR:</label>
+       <input type="text" class="campo" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="(00) 00000-0000" required>
+
+       <label for="sexo">SEXO:</label>
+       <input list="sexos" class="campo" id="sexo" name="sexo">
+       <datalist id="sexos">
+         <option value="Feminino">
+         <option value="Masculino">
+         <option value="Prefiro não dizer">
+        </datalist>
+
+       <label for="email">E-MAIL:</label>
+       <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
+
+       <label for="data_nascimento">DATA DE NASCIMENTO:</label>
+       <input type="date" class="campo" id="data_nascimento" name="data_nascimento" required>
+
+       <label for="nome_materno">NOME MATERNO:</label>
+       <input type="text" class="campo" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
+
+       <label for="login">LOGIN:</label>
+       <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
+
+       <label for="senha">SENHA:</label>
+       <input type="password" class="campo" id="senha" name="senha" placeholder="SENHA:" required>
+
+       <label for="confirme">CONFIRME A SENHA:</label>
+       <input type="password" class="campo" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
+
+       <label for="endereco">ENDEREÇO COMPLETO:</label>
+       <input type="text" class="campo" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
+
+       <button type="submit" class="botao botao_cadastro">ENVIAR</button>
+       <button type="reset" class="botao botao_cadastro">LIMPAR TELA</button>
+      </form>
+
     </div>
-  </section>
-</header>
-
-    <main class="conteudo_principal" id="conteudo_cadastro">
-        <div class="cadastro" id="cadastro-container">
-            <h1>CADASTRE-SE</h1>    
-            <form class="formulario" action="/cadastro" method="post">
-             <label for="nome">NOME COMPLETO:</label>
-             <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
-
-             <label for="cpf">CPF:</label>
-             <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
-
-             <label for="telefone">TELEFONE CELULAR:</label>
-             <input type="text" class="campo" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="(00) 00000-0000" required>
-
-             <label for="sexo">SEXO:</label>
-             <input list="sexos" class="campo" id="sexo" name="sexo">
-              <datalist id="sexos">
-                <option value="Feminino">
-                <option value="Masculino">
-                <option value="Prefiro não dizer">
-              </datalist>
-
-             <label for="email">E-MAIL:</label>
-             <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
-
-             <label for="data_nascimento">DATA DE NASCIMENTO:</label>
-             <input type="date" class="campo" id="data_nascimento" name="data_nascimento" required>
-
-             <label for="nome_materno">NOME MATERNO:</label>
-             <input type="text" class="campo" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
-
-             <label for="login">LOGIN:</label>
-             <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
-
-             <label for="senha">SENHA:</label>
-             <input type="password" class="campo" id="senha" name="senha" placeholder="SENHA:" required>
-
-             <label for="confirme">CONFIRME A SENHA:</label>
-             <input type="password" class="campo" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
-
-             <label for="endereco">ENDEREÇO COMPLETO:</label>
-             <input type="text" class="campo" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
-
-             <button type="submit" class="botao botao_cadastro">ENVIAR</button>
-             <button type="reset" class="botao botao_cadastro">LIMPAR TELA</button>
-            </form>
-
-        </div>
-    </main> 
+  </main> 
 </body>      

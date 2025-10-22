@@ -32,89 +32,81 @@
  </header>
 
   <main>
-    <div>
-      <h1>CADASTRE-SE</h1>
-       <br> 
-    </div> 
+  <div>
+    <h1>CADASTRE-SE</h1>
+    <br>
+  </div>
 
-    <section>
+  <section>
+    <form>
+      <!-- COLUNA ESQUERDA -->
+      <div>
+        <label for="nome">NOME COMPLETO:</label>
+        <input type="text" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
+      </div>
 
-      <form>
-        <div>
-         <label NOME COMPLETO:>
-         <input type="text" class="campo" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
-        </div>
-        <br>
+      <!-- COLUNA DIREITA -->
+      <div>
+        <label for="data_nascimento">DATA DE NASCIMENTO:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+      </div>
 
-        <div>
-          <label CPF:>
-          <input type="text" class="campo" id="cpf" name="cpf" placeholder="CPF:" required>
-        </div>
-        <br>
+      <div>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="CPF:" required>
+      </div>
 
-        <div>
-          <label TELEFONE CELULAR:>
-          <input type="text" class="campo" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="TELEFONE CELULAR:" required>
-        </div>
+      <div>
+        <label for="nome_materno">NOME MATERNO:</label>
+        <input type="text" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
+      </div>
 
-        <div>
-          <label SEXO:>
-          <input list="sexo" class="campo" id="sexo" name="sexo" placeholder="SEXO:">
-          <datalist id="sexo">
-            <option value="Feminino">
-            <option value="Masculino">
-            <option value="Prefiro não dizer">
-          </datalist>
-        </div>
-        <br>
+      <div>
+        <label for="telefone">TELEFONE CELULAR:</label>
+        <input type="text" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="TELEFONE CELULAR:" required>
+      </div>
 
-        <div>
-          <label E-MAIL:>
-         <input type="email" class="campo" id="email" name="email" placeholder="E-MAIL:" required>
-        </div>
-       <br>
+      <div>
+        <label for="login">LOGIN:</label>
+        <input type="text" id="login" name="login" placeholder="LOGIN:" required>
+      </div>
 
-        <div>
-         <label DATA DE NASCIMENTO:>
-         <input type="date" class="campo" id="data_nascimento" name="data_nascimento" required>
-        </div>
-       <br>
+      <div>
+        <label for="sexo">SEXO:</label>
+        <input list="sexo" id="sexo" name="sexo" placeholder="SEXO:">
+        <datalist id="sexo">
+          <option value="Feminino">
+          <option value="Masculino">
+          <option value="Prefiro não dizer">
+        </datalist>
+      </div>
 
-        <div>
-         <label NOME MATERNO:>
-         <input type="text" class="campo" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
-        </div>
-       <br>
+      <div>
+        <label for="senha">SENHA:</label>
+        <input type="password" id="senha" name="senha" placeholder="SENHA:" required>
+      </div>
 
-        <div>
-         <label LOGIN:>
-         <input type="text" class="campo" id="login" name="login" placeholder="LOGIN:" required>
-        </div>
-       <br>
+      <div>
+        <label for="email">E-MAIL:</label>
+        <input type="email" id="email" name="email" placeholder="E-MAIL:" required>
+      </div>
 
-        <div>
-         <label SENHA:>
-         <input type="password" class="campo" id="senha" name="senha" placeholder="SENHA:" required>
-        </div>
-       <br>
+      <div>
+        <label for="confirme">CONFIRME A SENHA:</label>
+        <input type="password" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
+      </div>
 
-        <div>
-         <label CONFIRME A SENHA:>
-         <input type="password" class="campo" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
-        </div>
-       <br>
-    
-        <div class="full-width">
-         <label ENDEREÇO COMPLETO:>
-         <input type="text" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
-        </div>
-       <br>
+      <div class="full-width">
+        <label for="endereco">ENDEREÇO COMPLETO:</label>
+        <input type="text" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
+      </div>
 
-        <div>
-         <button type="submit" class="botao botao_cadastro">ENVIAR</button>
-         <button type="reset" class="botao botao_cadastro">LIMPAR TELA</button>
-        </div>
-      </form>    
-    </section> 
-  </main>
+      <div class="botao">
+        <button type="submit">ENVIAR</button>
+        <button type="reset">LIMPAR TELA</button>
+      </div>
+    </form>
+  </section>
+</main>
+
 </body>    

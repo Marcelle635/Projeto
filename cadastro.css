@@ -88,59 +88,71 @@ section{
     padding-bottom: 0.5rem;
 }
 
-/*IMagem do café*/
-body{
-    background: url("img/principal.png");
-    height: 100vh;
-    background-position: center;
-    background-size: cover;
+
+/*Imagem de fundo*/
+body {
+  background: url("img/principal.png");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
 }
+
 /*Formulário*/
-main{
-    background-color: #afaaaada;
-    width: 60%;
-    margin: 120px auto;
-    padding: 4px;
-    border-radius: 12px;
+main {
+  background-color: #afaaaada;
+  width: 60%;
+  margin: 120px auto;
+  padding: 20px 40px;
+  border-radius: 12px;
 }
-h1{
-    text-align: center;
-    color: var(--black);
-    margin-bottom: 30px;
+
+h1 {
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 30px;
 }
-form{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 20px;
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px; /* espaçamento entre linhas e colunas */
 }
-label{
-    font-weight: bold;
-    color: var(--black);
+
+label {
+  display: block;
+  font-weight: bold;
+  color: var(--black);
+  margin-bottom: 5px;
 }
-input{
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #aaa;
-    border-radius: 6px;
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
 }
-.full-width{
-    grid-column: span 2;
+
+.full-width {
+  grid-column: span 2;
 }
-.botao{
-    grid-column: span 2;
-    text-align: center;
-    margin-top: 20px;
+
+.botao {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 20px;
 }
-button{
-    background-color: var(--black);
-    color: var(--main-color);
-    border: none;
-    padding: 10px 30px;
-    border-radius: 10px;
-    font-size: 16px;
-    margin: 0 10px;
-    cursor: pointer;
+
+button {
+  background-color: var(--black);
+  color: var(--main-color);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
 }
-button:hover{
-    background-color: #4b2e0f;
+
+button:hover {
+  background-color: #4b2e0f;
 }

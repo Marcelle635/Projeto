@@ -161,3 +161,85 @@ main button {
 main button:hover {
   background-color: #4b2e0f;
 }
+
+body.alto-contraste main,
+body.alto-contraste form {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+body.alto-contraste button {
+  background-color: #000;
+  color: #ff0; /* amarelo */
+  border: 1px solid #fff;
+}
+body.alto-contraste button:hover {
+  background-color: #333;
+}
+
+body.alto-contraste header {
+  background-color: #000;
+  color: #ff0;
+}
+body.alto-contraste .navbar a {
+  color: #ff0;
+}
+
+body.alto-contraste input {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* ====== ALTO CONTRASTE ====== */
+body.alto-contraste {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Fundo do formulário */
+body.alto-contraste main,
+body.alto-contraste form {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+/* Campos de texto */
+body.alto-contraste input {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* Botões */
+body.alto-contraste button {
+  background-color: #000;
+  color: #ff0;
+  border: 1px solid #fff;
+}
+
+/* Menu e links */
+body.alto-contraste header {
+  background-color: #000;
+  color: #ff0;
+}
+body.alto-contraste .navbar a,
+body.alto-contraste .areas a {
+  color: #ff0;
+}
+
+/* Botão de contraste */
+#toggle-contraste {
+  background: none;
+  border: none;
+  color: var(--main-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+#toggle-contraste:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+

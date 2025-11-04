@@ -26,6 +26,55 @@
     <div class="areas">
       <button id="diminuir-fonte">A-</button>
       <button id="aumentar-fonte">A+</button> |
+
+      <!-- ⚫⚪ Contraste -->
+        <button id="toggle-contraste" title="Ativar alto contraste">⚫⚪</button> |
+        <!-- ===== SCRIPT: FONTE + CONTRASTE ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 🔠 Controle de Fonte
+      let tamanhoFonte = localStorage.getItem("tamanhoFonte")
+        ? parseInt(localStorage.getItem("tamanhoFonte"))
+        : 100;
+
+      const html = document.documentElement;
+      html.style.fontSize = tamanhoFonte + "%";
+
+      document.getElementById("aumentar-fonte").addEventListener("click", function() {
+        if (tamanhoFonte < 150) {
+          tamanhoFonte += 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+
+      document.getElementById("diminuir-fonte").addEventListener("click", function() {
+        if (tamanhoFonte > 70) {
+          tamanhoFonte -= 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+
+      // ⚫⚪ Contraste
+      const contrasteBtn = document.getElementById("toggle-contraste");
+      let contrasteAtivo = localStorage.getItem("contrasteAtivo") === "true";
+
+      function aplicarContraste() {
+        document.body.classList.toggle("alto-contraste", contrasteAtivo);
+      }
+
+      aplicarContraste();
+
+      contrasteBtn.addEventListener("click", function() {
+        contrasteAtivo = !contrasteAtivo;
+        localStorage.setItem("contrasteAtivo", contrasteAtivo);
+        aplicarContraste();
+      });
+    });
+  </script>
+     
+
       <a href="cadastro.html">Cadastre-se</a> |
 
       <div class="trilho">

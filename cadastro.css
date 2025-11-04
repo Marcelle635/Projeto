@@ -243,3 +243,9 @@ body.alto-contraste .areas a {
   transform: scale(1.2);
 }
 
+/* Garante que o layout não quebre ao aumentar fonte */
+input, button {
+  line-height: 1.2em;
+  vertical-align: middle;
+}
+

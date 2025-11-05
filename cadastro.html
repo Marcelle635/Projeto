@@ -26,52 +26,8 @@
     <!-- Lado direito: Botões e links -->
     <div class="areas">
       <a href="login.html">Login</a> |
+      <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button>
-      <button id="aumentar-fonte">A+</button> 
-      <button id="toggle-darkmode" onclick="alternarModoEscuro()" title="Alternar modo escuro">
-  🌙
-</button>
-
-<!-- Botão de alto contraste -->
-<button id="toggle-contraste" onclick="alternarContraste()" title="Ativar alto contraste">
-  ⚫⚪
-</button>
-</div>
-
-<!-- Script dos modos -->
-<script>
-  // 🌙 Alternar modo escuro
-  function alternarModoEscuro() {
-    const body = document.body;
-    const botao = document.getElementById("toggle-darkmode");
-
-    body.classList.toggle("modo-escuro");
-
-    if (body.classList.contains("modo-escuro")) {
-      botao.textContent = "☀️"; // mostra sol quando escuro está ativo
-    } else {
-      botao.textContent = "🌙"; // mostra lua quando claro
-    }
-  }
-
-  // ⚫⚪ Alternar modo alto contraste
-  function alternarContraste() {
-    const body = document.body;
-    const botao = document.getElementById("toggle-contraste");
-
-    // Remove o modo escuro se estiver ativo
-    body.classList.remove("modo-escuro");
-    document.getElementById("toggle-darkmode").textContent = "🌙";
-
-    body.classList.toggle("alto-contraste");
-
-    if (body.classList.contains("alto-contraste")) {
-      botao.textContent = "⚪⚫"; // ativo
-    } else {
-      botao.textContent = "⚫⚪"; // normal
-    }
-  }
-</script>
 
 <script>
   // 🔠 Aumentar e diminuir fonte (todo o site)

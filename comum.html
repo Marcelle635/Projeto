@@ -6,7 +6,7 @@
     <title>Raízes do café</title>
     <link rel="stylesheet" href="comum.css">
 </head>
-<body>
+<body class="dark-mode">
     <!--Menu com funcionalidades-->
     <header class="header">
   <section>
@@ -24,66 +24,77 @@
 
     <!-- Lado direito: Botões e links -->
     <div class="areas">
-      <button id="diminuir-fonte">A-</button>
-      <button id="aumentar-fonte">A+</button> |
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> |
 
-      <!-- ⚫⚪ Contraste -->
-        <button id="toggle-contraste" title="Ativar alto contraste">⚫⚪</button> |
-        <!-- ===== SCRIPT: FONTE + CONTRASTE ===== -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // 🔠 Controle de Fonte
-      let tamanhoFonte = localStorage.getItem("tamanhoFonte")
-        ? parseInt(localStorage.getItem("tamanhoFonte"))
-        : 100;
-
-      const html = document.documentElement;
-      html.style.fontSize = tamanhoFonte + "%";
-
-      document.getElementById("aumentar-fonte").addEventListener("click", function() {
-        if (tamanhoFonte < 150) {
-          tamanhoFonte += 10;
-          html.style.fontSize = tamanhoFonte + "%";
-          localStorage.setItem("tamanhoFonte", tamanhoFonte);
-        }
-      });
-
-      document.getElementById("diminuir-fonte").addEventListener("click", function() {
-        if (tamanhoFonte > 70) {
-          tamanhoFonte -= 10;
-          html.style.fontSize = tamanhoFonte + "%";
-          localStorage.setItem("tamanhoFonte", tamanhoFonte);
-        }
-      });
-
-      // ⚫⚪ Contraste
-      const contrasteBtn = document.getElementById("toggle-contraste");
-      let contrasteAtivo = localStorage.getItem("contrasteAtivo") === "true";
-
-      function aplicarContraste() {
-        document.body.classList.toggle("alto-contraste", contrasteAtivo);
-      }
-
-      aplicarContraste();
-
-      contrasteBtn.addEventListener("click", function() {
-        contrasteAtivo = !contrasteAtivo;
-        localStorage.setItem("contrasteAtivo", contrasteAtivo);
-        aplicarContraste();
-      });
-    });
-  </script>
-     
+      
+   
 
       <a href="cadastro.html">Cadastre-se</a> |
+      
 
       <div class="trilho">
-        <div class="indicador"></div>
-      </div> |
-      <a href="#">Login</a>
+        
+        <div class="indicador"> </div>
+        
+      </div>  <!-- BOTÃO DESLIZANTE -->
+<label class="toggle-switch" title="Alternar modo escuro/claro">
+  <input type="checkbox" id="toggle-contraste">
+  <span class="slider"></span>
+</label> | 
+      
+    <a href="#">Login</a>
     </div>
   </section>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById("toggle-contraste");
+    const body = document.body;
+
+    // Carregar estado salvo
+    const modoSalvo = localStorage.getItem("contrasteConteudo") || "escuro";
+    if (modoSalvo === "claro") {
+      body.classList.add("modo-claro");
+      checkbox.checked = true;
+    }
+
+    // Alternar ao clicar
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        body.classList.add("modo-claro");
+        localStorage.setItem("contrasteConteudo", "claro");
+      } else {
+        body.classList.remove("modo-claro");
+        localStorage.setItem("contrasteConteudo", "escuro");
+      }
+    });
+
+    // === FONTE A+/A- (mantenha isso) ===
+    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 100;
+    const html = document.documentElement;
+    html.style.fontSize = tamanhoFonte + "%";
+
+    document.getElementById("aumentar-fonte").addEventListener("click", function () {
+      if (tamanhoFonte < 150) {
+        tamanhoFonte += 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+    document.getElementById("diminuir-fonte").addEventListener("click", function () {
+      if (tamanhoFonte > 70) {
+        tamanhoFonte -= 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+  });
+</script>
+
+
 
 
 <!--Imagem do café-->
@@ -96,43 +107,53 @@
           </div>
         </section>
     </div>
-
-  <!-- SOBRE NÓS -->
-    <section class="about" id="about">
-        <h2 class="title">Sobre Nós</h2>
-        <div class="row">
-            <div class="container-imagem">
-                <img src="img/cast.png" alt="Café">
-            </div>
-            <div class="cont">
-                <h3>O que faz nosso café ser especial? </h3>
-                <p>A cafeteria Raízes do Café se destaca pela qualidade,<br> oferecendo grãos especiais provenientes de pequenos<br> produtores e um processo de torra artesanal que garante<br> sabores e aromas únicos. O ambiente é acolhedor e<br> familiar, perfeito para quem busca um momento de<br> relaxamento ou um espaço para reuniões. Ao consumir no<br> Raízes do Café, você não só desfruta de uma bebida<br> excepcional, mas também contribui para uma cadeia de<br> produção mais justa alinhada com valores que vão além<br> da xícara.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEEDBACK -->
-  <section class="feedback-section">
-    <h2>Feedback</h2>
-    <div class="feedback-container">
-      <div class="feedback-card">
-        <h3>Marina Santos</h3>
-        <p>Adorei o café, é realmente especial e com um sabor que se destaca. O bolo de chocolate perfeito!</p>
-      </div>
-      <div class="feedback-card">
-        <h3>Caleb Vieira</h3>
-        <p>O cupcake de morango é sensacional e o ambiente é super aconchegante.</p>
-      </div>
-      <div class="feedback-card">
-        <h3>Patrícia Rocha</h3>
-        <p>O café cremoso é delicioso e o atendimento faz toda diferença.</p>
-      </div>
-      <div class="feedback-card">
-        <h3>Samuel Ferreira</h3>
-        <p>O petit gateau e os chocolates são imperdíveis. O melhor café da região!</p>
-      </div>
-    </div>
-  </section>
+   
+  
+    
+       
+          
+         
+            <!-- SOBRE NÓS -->
+               <section class="about" id="about">
+          <h2 class="title">Sobre Nós</h2>
+          <div class="row">
+              <div class="container-imagem">
+                  <img src="img/cast.png" alt="Café">
+              </div>
+              <div class="cont">
+                  <h3>O que faz nosso café ser especial? </h3>
+                  <p>A cafeteria Raízes do Café se destaca pela qualidade,<br> oferecendo grãos especiais provenientes de pequenos<br> produtores e um processo de torra artesanal que garante<br> sabores e aromas únicos. O ambiente é acolhedor e<br> familiar, perfeito para quem busca um momento de<br> relaxamento ou um espaço para reuniões. Ao consumir no<br> Raízes do Café, você não só desfruta de uma bebida<br> excepcional, mas também contribui para uma cadeia de<br> produção mais justa alinhada com valores que vão além<br> da xícara.</p>
+              </div>
+          </div>
+             </section>
+         
+             <!-- FEEDBACK -->
+           <section class="feedback-section">
+             <h2>Feedback</h2>
+             
+             <div class="feedback-container">
+          <div class="feedback-card">
+          <h3>Marina Santos</h3>
+          <p>Adorei o café, é realmente especial e com um sabor que se destaca. O bolo de chocolate perfeito!</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Caleb Vieira</h3>
+          <p>O cupcake de morango é sensacional e o ambiente é super aconchegante.</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Patrícia Rocha</h3>
+          <p>O café cremoso é delicioso e o atendimento faz toda diferença.</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Samuel Ferreira</h3>
+          <p>O petit gateau e os chocolates são imperdíveis. O melhor café da região!</p>
+               </div>
+             </div>
+           </section>
+          </div>
+        
+      
+      
 
   <!-- RODAPÉ -->
   <footer class="footer">

@@ -100,22 +100,26 @@ body {
 /*Formulário*/
 main {
   background-color: #afaaaada;
-  width: 60%;
+  width: 700px;
   margin: 120px auto;
-  padding: 8px 40px;
+  padding: 80px;
   border-radius: 12px;
 }
 
 h1 {
   text-align: center;
   color: var(--black);
-  margin-bottom: 13px;
+  margin-bottom: 15px;
+  font-size: 30px
 }
 
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px; /* espaçamento entre linhas e colunas */
+  gap: 20px; /* espaçamento entre linhas e colunas */
+  align-content: center;
+  width: 170%;
+  margin-left: 110px;
 }
 
 label {
@@ -126,8 +130,9 @@ label {
 }
 
 input {
-  width: 100%;
-  padding: 8px;
+  width: 70%;
+  padding: 20px;
+  margin: 10px 0;
   border: 1px solid #aaa;
   border-radius: 6px;
 }
@@ -135,7 +140,9 @@ input {
 input::placeholder {
   color: black;   
   opacity: 1; /* garante que a cor apareça 100% */
+  font-size: 15px;
 }
+
 
 .full-width {
   grid-column: span 2;
@@ -144,7 +151,7 @@ input::placeholder {
 .botao {
   grid-column: span 2;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 main button {
@@ -162,13 +169,20 @@ main button:hover {
   background-color: #4b2e0f;
 }
 
-.cadastre-se {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: #552D0F
+h2 {
+    text-decoration: none; 
+    color: #552D0F;
+    font-weight: bold;
+    font-size: 50px;
+    cursor: pointer;
 }
 
-.cadastre-se:hover {
-  text-decoration: none;
+main h2 {
+    margin: 0;
+    font-size: 20px; 
+    text-align: center;
+}
+
+main h2 a:hover {
+    text-decoration: none;
 }

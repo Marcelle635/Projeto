@@ -102,14 +102,14 @@ main {
   background-color: #afaaaada;
   width: 700px;
   margin: 120px auto;
-  padding: 80px;
+  padding: 50px;
   border-radius: 12px;
 }
 
 h1 {
   text-align: center;
   color: var(--black);
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   font-size: 30px
 }
 
@@ -131,8 +131,8 @@ label {
 
 input {
   width: 70%;
-  padding: 20px;
-  margin: 10px 0;
+  padding: 14px;
+  margin: 8px 0;
   border: 1px solid #aaa;
   border-radius: 6px;
 }

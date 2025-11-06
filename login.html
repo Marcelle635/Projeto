@@ -26,11 +26,39 @@
     <!-- Lado direito: Botões e links -->
     <div class="areas">
       <a href="#">Login</a> |
-      <button id="diminuir-fonte">A-</button>
-      <button id="aumentar-fonte">A+</button> 
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> 
     </div>
   </section>
  </header>
+
+ <script>
+  // 🔠 Aumentar e diminuir fonte (todo o site)
+    document.addEventListener("DOMContentLoaded", function() {
+      let tamanhoFonte = localStorage.getItem("tamanhoFonte")
+        ? parseInt(localStorage.getItem("tamanhoFonte"))
+        : 100;
+  
+      const html = document.documentElement;
+      html.style.fontSize = tamanhoFonte + "%";
+  
+      document.getElementById("aumentar-fonte").addEventListener("click", function() {
+        if (tamanhoFonte < 150) {
+          tamanhoFonte += 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+  
+      document.getElementById("diminuir-fonte").addEventListener("click", function() {
+        if (tamanhoFonte > 70) {
+          tamanhoFonte -= 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+    });
+</script>
 
   <main>
   <div>

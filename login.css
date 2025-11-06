@@ -176,6 +176,11 @@ h2 {
     font-size: 50px;
     cursor: pointer;
 }
+.link-cadastre-se{
+  color: var(--black);
+  font-weight: bold;
+  text-decoration: none;
+}
 
 main h2 {
     margin: 0;

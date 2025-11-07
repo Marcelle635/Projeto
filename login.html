@@ -88,5 +88,46 @@
     <br>
     <h2><a href="cadastro.html" class="link-cadastre-se">CADASTRE-SE</a></h2>
     <br>
+
+    <div id="erro" class="erro oculto">
+  <p id="mensagem-erro"></p>
+  <button id="fechar-erro">OK</button>
+</div>
+
   </main>
-</body>      
+
+  <script>
+// Banco de usuários simulados (poderia vir de um backend real)
+const usuarios = [
+  { login: "admin", senha: "123", tipo: "Master" },
+  { login: "joao", senha: "123", tipo: "Comum" }
+];
+
+// Evento do botão ENVIAR
+document.querySelector("button[type='submit']").addEventListener("click", function(e) {
+  e.preventDefault(); // Evita recarregar a página
+
+  const login = document.getElementById("login").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+
+  // Verifica se o usuário existe
+  const usuario = usuarios.find(u => u.login === login && u.senha === senha);
+
+  if (usuario) {
+    // Salva no localStorage quem está logado
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    alert(`Bem-vindo, ${usuario.login}!`);
+
+    // Redireciona de acordo com o tipo
+    if (usuario.tipo === "Master") {
+      window.location.href = "master.html";
+    } else {
+      window.location.href = "comum.html";
+    }
+  } else {
+    alert("Login ou senha incorretos!");
+  }
+});
+</script>
+
+</body>            

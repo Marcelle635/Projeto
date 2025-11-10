@@ -63,13 +63,13 @@
       }
     });
 
-    // === FONTE A+/A- (mantenha isso) ===
-    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 100;
+   // === FONTE A+/A- (mantenha isso) ===
+    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
     const html = document.documentElement;
     html.style.fontSize = tamanhoFonte + "%";
 
     document.getElementById("aumentar-fonte").addEventListener("click", function () {
-      if (tamanhoFonte < 150) {
+      if (tamanhoFonte < 70) {
         tamanhoFonte += 10;
         html.style.fontSize = tamanhoFonte + "%";
         localStorage.setItem("tamanhoFonte", tamanhoFonte);
@@ -77,14 +77,14 @@
     });
 
     document.getElementById("diminuir-fonte").addEventListener("click", function () {
-      if (tamanhoFonte > 70) {
+      if (tamanhoFonte > 40) {
         tamanhoFonte -= 10;
         html.style.fontSize = tamanhoFonte + "%";
         localStorage.setItem("tamanhoFonte", tamanhoFonte);
       }
     });
   });
-</script> 
+</script>
 
 
 

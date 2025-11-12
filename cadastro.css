@@ -1,3 +1,4 @@
+
 :root{
     --main-color:#DCA153;
     --black:#552D0F;
@@ -118,7 +119,7 @@ form {
   gap: 20px 40px; /* espaçamento entre linhas e colunas */
 }
 
-label {
+.label {
   display: block;
   font-weight: bold;
   color: var(--black);
@@ -131,11 +132,18 @@ input {
   border: 1px solid #aaa;
   border-radius: 6px;
 }
+
+.select {
+ width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
 input::placeholder {
   color: black;   
   opacity: 1; /* garante que a cor apareça 100% */
 }
-
 
 .full-width {
   grid-column: span 2;
@@ -162,5 +170,14 @@ main button:hover {
   background-color: #4b2e0f;
 }
 
+.span-required {
+  font-size: 12px;
+  display: none;
+  margin: 3px 0 0 1px;
+  color: #FF0000;
+}
 
-
+.campo-oculto {
+    /*esconde a <div> */
+    display: none; 
+}

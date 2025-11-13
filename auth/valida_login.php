@@ -44,7 +44,7 @@ if(!$login_ok){
     exit;
 }
 
-$_SESSION['user_temp'] = [
+$_SESSION['user'] = [
     'id' => $user['id'],
     'nome' => $user['nome'],
     'login' => $user['login'],

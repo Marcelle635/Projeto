@@ -2,7 +2,7 @@
 session_start();
 require __DIR__ . "/../config/db.php";
 
-if(!isset($_SESSION['user_temp']) || !isset($_SESSION['campo2fa'])){
+if(!isset($_SESSION['user']) || !isset($_SESSION['campo2fa'])){
     header("Location: ../pages/login.php");
     exit;
 }
@@ -28,9 +28,6 @@ $valor_db = $row[$campo] ?? null;
 
 $tent = $_SESSION['tentativas_2fa'] ?? 0;
 
-// normalizadores:
-// - para nomes e endereço: remove espaços extras, acentos, transforma em lowercase e remove pontuação simples
-// - para data_nasc: compara igualdade direta (formato YYYY-MM-DD)
 function normalize_text($s){
     $s = mb_strtolower(trim($s), 'UTF-8');
     $s = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $s);
@@ -75,7 +72,7 @@ if($ok){
     
     unset($_SESSION['user_temp'], $_SESSION['campo2fa'], $_SESSION['tentativas_2fa']);
 
-    header("Location: ../pages/painel.php");
+    header("Location: ../pages/inicio.html");
     exit;
 } else {
     $tent++;

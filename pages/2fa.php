@@ -29,14 +29,14 @@ $t = $_SESSION['tentativas_2fa'] ?? 0;
   <title>Verificação 2FA - Raízes do Café</title>
 
   
-  <link rel="stylesheet" href="2fa.css">
+  <link rel="stylesheet" href="../css/2fa.css">
 </head>
 <body>
 
   
   <header class="header">
     <div class="logo">
-      <img src="img/logo.png" alt="Logo Raízes do Café">
+      <img src="../img/logo.png" alt="Logo Raízes do Café">
     </div>
 
     <nav class="navbar">

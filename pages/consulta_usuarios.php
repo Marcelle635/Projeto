@@ -21,13 +21,13 @@ $result = $stmt->get_result();
 <head>
   <meta charset="UTF-8">
   <title>Consulta de Usuários - Raízes do Café</title>
-  <link rel="stylesheet" href="consulta_usuarios.css">
+  <link rel="stylesheet" href="../css/consulta_usuarios.css">
 </head>
 <body>
 
 <header class="header">
   <div class="logo">
-    <img src="img/logo.png" alt="Logo Raízes do Café">
+    <img src="../img/logo.png" alt="Logo Raízes do Café">
   </div>
   <nav class="navbar">
     <a href="painel_master.php">Painel</a>

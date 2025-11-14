@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --marrom: #4b2e14;
+  --marrom-claro: #6b3e1e;
+  --dourado: #caa472;
+  --texto: #2c1b0d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('../img/principal.png') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--texto);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+.header {
+  background: var(--marrom);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar a {
+  color: #f7e4c8;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+  width: 360px;
+  text-align: center;
+}
+
+.login-form h1 {
+  margin-bottom: 25px;
+  color: var(--marrom);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid var(--dourado);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.login-form input:focus {
+  border-color: var(--marrom);
+  box-shadow: 0 0 5px var(--dourado);
+}
+
+.login-form button {
+  background-color: var(--marrom);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.login-form button:hover {
+  background-color: var(--marrom-claro);
+  color: var(--dourado);
+  transform: translateY(-1px);
+}
+
+.erro {
+  color: red;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}

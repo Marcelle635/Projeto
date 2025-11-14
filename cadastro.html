@@ -110,16 +110,13 @@
         <input type="text" id="login" name="login" placeholder="LOGIN:" required>
         <span id="span-required" class="span-required">deve ter 6 caracteres alfabéticos</span>
       </div>
-
-      <div>
-        <label for="sexo"></label>
-        <select id="sexo" name="sexo" required>
-         <option value="" disabled selected>SEXO:</option>
-         <option value="Feminino">Feminino</option>
-         <option value="Masculino">Masculino</option>
-         <option value="Prefiro não dizer">Prefiro não dizer</option>
-        </select>
-      </div>
+   
+    <datalist id="lista_sexo">
+        <option value="Feminino">
+        <option value="Masculino">
+        <option value="Prefiro não dizer">
+    </datalist>
+     </div>
 
       <div>
         <label for="senha"></label>

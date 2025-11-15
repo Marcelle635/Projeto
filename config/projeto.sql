@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/11/2025 às 17:08
+-- Tempo de geração: 15/11/2025 às 16:04
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -54,7 +54,17 @@ INSERT INTO `logs` (`id`, `usuario_id`, `login_via`, `acao`, `detalhe`, `ip`, `d
 (10, 1, 'admin1', 'login_fail', 'senha incorreta', '::1', '2025-11-09 12:16:41'),
 (11, NULL, 'comedi', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-09 12:17:31'),
 (12, NULL, 'comedi', '2fa_fail', 'Resposta incorreta (campo: nome_materno) tentativa 1', '::1', '2025-11-09 12:51:06'),
-(13, NULL, 'comedi', '2fa_ok', '2FA correta (campo: nome_materno)', '::1', '2025-11-09 12:51:37');
+(13, NULL, 'comedi', '2fa_ok', '2FA correta (campo: nome_materno)', '::1', '2025-11-09 12:51:37'),
+(14, 1, 'admin1', 'login_fail', 'senha incorreta', '::1', '2025-11-13 11:45:54'),
+(15, 1, 'admin1', 'login_fail', 'senha incorreta', '::1', '2025-11-13 11:48:12'),
+(16, 1, 'admin1', 'login_fail', 'senha incorreta', '::1', '2025-11-13 11:48:16'),
+(17, 1, 'admin1', 'login_fail', 'senha incorreta', '::1', '2025-11-13 11:48:22'),
+(18, 1, 'admin1', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-13 11:50:17'),
+(19, 8, 'joao', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-13 12:04:16'),
+(20, 1, 'admin1', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-14 19:48:58'),
+(21, 8, 'joao', 'login_fail', 'senha incorreta', '::1', '2025-11-14 19:55:50'),
+(22, 8, 'joao', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-14 20:04:27'),
+(23, 1, 'admin1', 'login_ok', 'senha validada, aguardando 2FA', '::1', '2025-11-14 20:04:59');
 
 -- --------------------------------------------------------
 
@@ -82,7 +92,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nome`, `data_nasc`, `cpf`, `nome_materno`, `telefone`, `login`, `sexo`, `senha`, `email`, `endereco`, `perfil`) VALUES
-(1, 'Admin Master', '1980-01-01', '12345678901', 'Master Admin', '(21)99999-9999', 'admin1', 'Masculino', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'admin@example.com', 'Rua Admin, Centro, RJ', 'master');
+(1, 'Admin Master', '1980-01-01', '12345678901', 'Master Admin', '(21)99999-9999', 'admin1', 'Masculino', '25f43b1486ad95a1398e3eeb3d83bc4010015fcc9bedb35b432e00298d5021f7', 'admin@example.com', 'Rua Admin, Centro, RJ', 'master'),
+(8, 'João Silva', '1995-04-10', '22222222222', 'Ana', '(21)98888-1111', 'joao', 'Masculino', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'joao@raizes.com', 'Rua Café, 200', 'comum'),
+(9, 'Maria Souza', '1998-08-22', '33333333333', 'Clara', '(21)97777-2222', 'maria', 'Feminino', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'maria@raizes.com', 'Av. Brasil, 350', 'comum'),
+(10, 'Carlos Pereira', '1992-11-03', '44444444444', 'Helena', '(21)96666-3333', 'carlos', 'Masculino', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'carlos@raizes.com', 'Rua dos Ipês, 45', 'comum'),
+(11, 'Fernanda Oliveira', '1999-03-27', '55555555555', 'Lucia', '(21)95555-4444', 'fernan', 'Feminino', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'fernanda@raizes.com', 'Rua das Flores, 77', 'comum');
 
 --
 -- Índices para tabelas despejadas
@@ -112,13 +126,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restrições para tabelas despejadas

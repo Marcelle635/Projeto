@@ -25,7 +25,7 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Consulta de Usuários - Raízes do Café</title>
-    <link rel="stylesheet" href="/projeto/css/consulta_usuarios.css">
+    <link rel="stylesheet" href="../css/consulta_usuarios.css">
 </head>
 <body>
 <header class="header">

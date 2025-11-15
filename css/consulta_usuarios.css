@@ -103,7 +103,7 @@ body{
     height: 100vh;
     background-position: center;
     background-size: cover;
-    margin-bottom: 7rem;
+    
 }
 
 .home-container section{
@@ -127,6 +127,23 @@ body{
   margin-bottom: 4rem;
 }
 
+/* Botão */
+.btn {
+  background-color: var(--main-color, #ffc107); /* Fallback amarelo */
+  color: #000;
+  padding: 1rem 3rem; /* antes era 0.5rem 1rem */
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px; /* Arredonda botão */
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #e0a800; /* Cor ao passar o mouse */
+}
 
 .title{
     font-size: 2rem;

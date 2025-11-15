@@ -41,7 +41,7 @@ $result = $stmt->get_result();
 
   <form method="GET" class="busca-form">
     <input type="text" name="busca" placeholder="Pesquisar por nome..." value="<?php echo htmlspecialchars($busca); ?>">
-    <button type="submit">🔍 Buscar</button>
+    <button type="submit">Buscar</button>
   </form>
 
   <table class="tabela">
@@ -62,7 +62,7 @@ $result = $stmt->get_result();
         <td>
           <form method="POST" action="../auth/excluir_usuario.php" onsubmit="return confirm('Deseja realmente excluir este usuário?');">
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-            <button type="submit" class="btn-excluir">🗑️ Excluir</button>
+            <button type="submit" class="btn-excluir">Excluir</button>
           </form>
         </td>
       </tr>
@@ -94,4 +94,5 @@ $result = $stmt->get_result();
   RAÍZES 2025 MARKETING DIGITAL E PERFORMANCE 360º
 </div>
 </body>
+
 </html>

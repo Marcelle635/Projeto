@@ -110,7 +110,16 @@ $result = $stmt->get_result();
     });
   });
 </script>
-
+<!--Imagem do café-->
+    <div class="home-container">
+        <section id="home">
+          <div class="content">
+            <h3>O MELHOR CAFÉ DA REGIÃO</h3>
+            <p>Cada xícara é um convite para desacelerar e saborear o que<br> há de melhor. Trabalhamos com grãos selecionados de origem<br> brasileira, preparados com carinho e atenção aos detalhes. </p>
+            <a href="#" class="btn">Pegue o seu agora</a>
+          </div>
+        </section>
+    </div>
 
 <main class="container">
     <h1 class="title">Consulta de Usuários</h1>

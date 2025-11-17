@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do café</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <!--Menu com funcionalidades-->
+    <header class="header">
+  <section>
+    <!-- Lado esquerdo: Logo + Navegação -->
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="comum.html">Home</a>
+        <a href="menucomum.html">Menu</a>
+      </nav>
+    </div>
+
+    <!-- Lado direito: Botões e links -->
+    <div class="areas">
+      <a href="login.html">Login</a> |
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button>
+
+<script>
+  // 🔠 Aumentar e diminuir fonte (todo o site)
+    document.addEventListener("DOMContentLoaded", function() {
+      let tamanhoFonte = localStorage.getItem("tamanhoFonte")
+        ? parseInt(localStorage.getItem("tamanhoFonte"))
+        : 100;
+  
+      const html = document.documentElement;
+      html.style.fontSize = tamanhoFonte + "%";
+  
+      document.getElementById("aumentar-fonte").addEventListener("click", function() {
+        if (tamanhoFonte < 150) {
+          tamanhoFonte += 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+  
+      document.getElementById("diminuir-fonte").addEventListener("click", function() {
+        if (tamanhoFonte > 70) {
+          tamanhoFonte -= 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+    });
+</script>
+
+
+</div>
+
+
+</button>
+    </div>
+  </section>
+ </header>
+
+  <main>
+  <div>
+    <br><h1>CADASTRE-SE</h1>
+    
+  </div>
+
+  <section>
+    <form>
+      <!-- COLUNA ESQUERDA -->
+      <div>
+        <label for="nome"></label>
+        <input type="text" id="nome" name="nome" placeholder="NOME COMPLETO:" required>
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <div>
+        <label for="data_nascimento"></label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+      </div>
+
+      <div>
+        <label for="cpf"></label>
+        <input type="number" id="cpf" name="cpf" placeholder="CPF:" required>
+      </div>
+
+      <div>
+        <label for="nome_materno"></label>
+        <input type="text" id="nome_materno" name="nome_materno" placeholder="NOME MATERNO:" required>
+      </div>
+
+      <div>
+        <label for="telefone"></label>
+        <input type="number" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{5}-\d{4}" placeholder="TELEFONE CELULAR:" required>
+      </div>
+
+      <div>
+        <label for="login"></label>
+        <input type="text" id="login" name="login" placeholder="LOGIN:" required>
+      </div>
+
+      <div>
+        <label for="sexo"></label>
+        <input list="sexo" id="sexo" name="sexo" placeholder="SEXO:">
+        <datalist id="sexo">
+          <option value="Feminino">
+          <option value="Masculino">
+          <option value="Prefiro não dizer">
+        </datalist>
+      </div>
+
+      <div>
+        <label for="senha"></label>
+        <input type="password" id="senha" name="senha" placeholder="SENHA:" required>
+      </div>
+
+      <div>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="E-MAIL:" required>
+      </div>
+
+      <div>
+        <label for="confirme"></label>
+        <input type="password" id="confirme" name="confirme_senha" placeholder="CONFIRME A SENHA:" required>
+      </div>
+
+      <div class="full-width">
+        <label for="endereco"></label>
+        <input type="text" id="endereco" name="endereco" placeholder="ENDEREÇO COMPLETO:" required>
+      </div>
+
+      <div class="botao">
+        <button type="submit">ENVIAR</button>
+        <button type="reset">LIMPAR TELA</button>
+      </div>
+    </form>
+  </section>
+ </main>
+
+
+
+</body>    

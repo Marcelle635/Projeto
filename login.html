@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do café</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!--Menu com funcionalidades-->
+    <header class="header">
+  <section>
+    <!-- Lado esquerdo: Logo + Navegação -->
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="comum.html">Home</a>
+        <a href="menucomum.html">Menu</a>
+      </nav>
+    </div>
+ 
+    <!-- Lado direito: Botões e links -->
+    <div class="areas">
+      <a href="#">Login</a> |
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> 
+    </div>
+  </section>
+ </header>
+
+ <script>
+  // 🔠 Aumentar e diminuir fonte (todo o site)
+    document.addEventListener("DOMContentLoaded", function() {
+      let tamanhoFonte = localStorage.getItem("tamanhoFonte")
+        ? parseInt(localStorage.getItem("tamanhoFonte"))
+        : 100;
+  
+      const html = document.documentElement;
+      html.style.fontSize = tamanhoFonte + "%";
+  
+      document.getElementById("aumentar-fonte").addEventListener("click", function() {
+        if (tamanhoFonte < 150) {
+          tamanhoFonte += 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+  
+      document.getElementById("diminuir-fonte").addEventListener("click", function() {
+        if (tamanhoFonte > 70) {
+          tamanhoFonte -= 10;
+          html.style.fontSize = tamanhoFonte + "%";
+          localStorage.setItem("tamanhoFonte", tamanhoFonte);
+        }
+      });
+    });
+</script>
+
+  <main>
+  <div>
+    <br>
+    <h1>LOGIN</h1>  
+  </div>
+   <section>
+    <form>
+      <div>
+       <label for="login"></label>
+       <input type="text" id="login" name="login" placeholder="LOGIN:" required>
+      </div>
+      <br>
+
+      <div>
+       <label for="senha"></label>
+       <input type="password" id="senha" name="senha" placeholder="SENHA:" required>
+      </div>
+      <br>
+    </form>
+   </section> 
+
+    <div class="botao">
+      <button type="submit">ENVIAR</button>
+      <button type="reset">LIMPAR TELA</button>
+    </div>
+    <br>
+    <h2><a href="cadastro.html" class="link-cadastre-se">CADASTRE-SE</a></h2>
+    <br>
+
+    <div id="erro" class="erro oculto">
+  <p id="mensagem-erro"></p>
+  <button id="fechar-erro">OK</button>
+</div>
+
+  </main>
+
+  <script>
+// Banco de usuários simulados (poderia vir de um backend real)
+const usuarios = [
+  { login: "admin", senha: "123", tipo: "Master" },
+  { login: "joao", senha: "123", tipo: "Comum" }
+];
+
+// Evento do botão ENVIAR
+document.querySelector("button[type='submit']").addEventListener("click", function(e) {
+  e.preventDefault(); // Evita recarregar a página
+
+  const login = document.getElementById("login").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+
+  // Verifica se o usuário existe
+  const usuario = usuarios.find(u => u.login === login && u.senha === senha);
+
+  if (usuario) {
+    // Salva no localStorage quem está logado
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    alert(`Bem-vindo, ${usuario.login}!`);
+
+    // Redireciona de acordo com o tipo
+    if (usuario.tipo === "Master") {
+      window.location.href = "master.html";
+    } else {
+      window.location.href = "comum.html";
+    }
+  } else {
+    alert("Login ou senha incorretos!");
+  }
+});
+</script>
+
+</body>            

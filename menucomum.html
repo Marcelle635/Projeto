@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raízes do café</title>
+    <link rel="stylesheet" href="comum.css">
+</head>
+<body>
+   <!--Menu com funcionalidades-->
+    <header class="header">
+  <section>
+    <!-- Lado esquerdo: Logo + Navegação -->
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="comum.html">Home</a>
+        <a href="menucomum.html">Menu</a>
+      </nav>
+    </div>
+
+    <!-- Lado direito: Botões e links -->
+    <div class="areas">
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> |
+      <a href="cadastro.html">Cadastre-se</a> |
+      <!--trilho e indicador pra botar o escuro e claro-->
+      <div class="trilho">
+        <div class="indicador"></div>
+      </div> <!-- BOTÃO DESLIZANTE -->
+<label class="toggle-switch" title="Alternar modo escuro/claro">
+  <input type="checkbox" id="toggle-contraste">
+  <span class="slider"></span>
+</label>  |
+      <a href="#">Login</a>
+    </div>
+  </section>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById("toggle-contraste");
+    const body = document.body;
+
+    // Carregar estado salvo
+    const modoSalvo = localStorage.getItem("contrasteConteudo") || "escuro";
+    if (modoSalvo === "claro") {
+      body.classList.add("modo-claro");
+      checkbox.checked = true;
+    }
+
+    // Alternar ao clicar
+    checkbox.addEventListener("change", function () {
+      if (this.checked) {
+        body.classList.add("modo-claro");
+        localStorage.setItem("contrasteConteudo", "claro");
+      } else {
+        body.classList.remove("modo-claro");
+        localStorage.setItem("contrasteConteudo", "escuro");
+      }
+    });
+
+    // === FONTE A+/A- (mantenha isso) ===
+    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 100;
+    const html = document.documentElement;
+    html.style.fontSize = tamanhoFonte + "%";
+
+    document.getElementById("aumentar-fonte").addEventListener("click", function () {
+      if (tamanhoFonte < 150) {
+        tamanhoFonte += 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+    document.getElementById("diminuir-fonte").addEventListener("click", function () {
+      if (tamanhoFonte > 70) {
+        tamanhoFonte -= 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+  });
+</script> 
+
+
+
+
+<!--Imagem do café-->
+    <div class="home-container">
+        <section id="home">
+          <div class="content">
+            <h3>O MELHOR CAFÉ DA REGIÃO</h3>
+            <p>Cada xícara é um convite para desacelerar e saborear o que<br> há de melhor. Trabalhamos com grãos selecionados de origem<br> brasileira, preparados com carinho e atenção aos detalhes. </p>
+            <a href="#" class="btn">Pegue o seu agora</a>
+          </div>
+        </section>
+    </div>
+
+    <!--Menu e cards-->
+<section class="menu" id="menu">
+        <h2 class="title">Menu</h2>
+        <h3 class="timenor">Cafés</h3>
+        <div class="box-container">
+            <div class="box">
+            <img src="img/promocao.png" alt="Café promocional">
+            <h3>Café promocional</h3>
+            <div class="price">R$ 25,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/expresso.png" alt="Café Expresso">
+            <h3>Café Expresso</h3>
+            <div class="price">R$ 9,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/marshmallow.png" alt="Café com marshmallow">
+            <h3>Café cremoso com marshmallow</h3>
+            <div class="price">R$ 19,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/chocolate.PNG" alt="Café com chocolate">
+            <h3>Café cremoso com chocolate</h3>
+            <div class="price">R$ 19,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+        </div>
+        <h3 class="timenor">Doces</h3>
+<div class="box-container">
+            <div class="box">
+            <img src="img/petit.png" alt="Petit gâteau">
+            <h3>Petit gâteau</h3>
+            <div class="price">R$ 25,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/bolochocolate.png" alt="Bolo de chocolate ">
+            <h3>Bolo de chocolate</h3>
+            <div class="price">R$ 12,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/bolomorango.png" alt="Bolo de morango">
+            <h3>Bolo de morango</h3>
+            <div class="price">R$ 12,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/donuts.png" alt="Donuts">
+            <h3>Donuts</h3>
+            <div class="price">R$ 35,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+            <img src="img/cupchocolate.png" alt="Cupcake de chocolate">
+            <h3>Cupcake de chocolate</h3>
+            <div class="price">R$ 12,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/cupmorango.png" alt="Cupcake de morango">
+            <h3>Cupcake de morango</h3>
+            <div class="price">R$ 12,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/bombom.png" alt="Caixa de bombom ">
+            <h3>Caixa de bombom </h3>
+            <div class="price">R$ 20,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+
+            <div class="box">
+            <img src="img/Cabombom.png" alt="Caixa de bombom ">
+            <h3>Caixa de bombom </h3>
+            <div class="price">R$ 20,99</div>
+            <a href="#" class="btn">Comprar</a>
+            </div>
+        </div>
+    </section>
+    
+     <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="img/logo clara.jpeg" alt="Raízes do Café" class="footer-logo">
+        <p>
+          Raízes do café é a extensão<br> da sua casa. A nossa casa<br> existe para compartilhar
+          o sabor<br> dos bons momentos com você e sua família.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>POSTS RECENTES</h3>
+      </div>
+
+      <div class="footer-col">
+        <h3>NOSSAS LOJAS</h3>
+        <ul>
+          <li>Copacabana</li>
+          <li>Rio Sul</li>
+          <li>Barra da Tijuca</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>RAÍZES 2025 MARKETING DIGITAL E PERFORMANCE <a href="#">360R.</a></p>
+      <div class="payment-icons">
+        <img src="img/formas-de-pagamento 1.png" alt="Formas de pagamento">
+      </div>
+    </div>
+  </footer>
+    </body>
+</html>

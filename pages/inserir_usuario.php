@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <head>
 <meta charset="UTF-8">
 <title>Inserir Usuário</title>
-<link rel="stylesheet" href="../css/consulta_usuarios.css">
+<link rel="stylesheet" href="../css/inserir_usuarios.css">
 <style>
 .form-container {
     background: var(--branco-transp);

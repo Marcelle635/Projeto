@@ -25,22 +25,145 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Consulta de Usuários - Raízes do Café</title>
-    <link rel="stylesheet" href="/projeto/css/consulta_usuarios.css">
+    <link rel="stylesheet" href="../css/consulta_usuarios.css">
 </head>
-<body>
-<header class="header">
-    <div class="logo">
-        <img src="../img/logo.png" alt="Logo Raízes do Café">
-    </div>
-    <nav class="navbar">
-        <a href="painel_master.php">Painel</a>
-        <a href="consulta_usuarios.php" class="ativo">Consulta de Usuários</a>
+
+
+
+<body class="modo-escuro">
+ <!--Menu com funcionalidades-->
+    <header class="header">
+  <section>
+    <!-- Lado esquerdo: Logo + Navegação -->
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="../img/logo.png" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <a href="../masterhome.html">Home</a>
+        <a href="../mastermenu.html">Menu</a>
+        <a href="consulta_usuarios.php">Consulta de Usuários</a>
+      </nav>
+    
+        
         <a href="../auth/logout.php">Sair</a>
-    </nav>
+    </div>
+<!-- Lado direito: Botões e links -->
+    <div class="areas">
+      
+    <!--trilho e indicador pra botar o escuro e claro-->
+      <div class="trilho">
+        <div class="indicador"></div>
+      </div> <!-- BOTÃO DESLIZANTE -->
+<label class="toggle-switch" title="Alternar modo escuro/claro">
+  <input type="checkbox" id="toggle-contraste">
+  <span class="slider"></span>
+</label>  |
+ <div class="areas">
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> |</div>
+    </div>
+  </section>
 </header>
 
-<main class="container">
-    <h1>Consulta de Usuários</h1>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("toggle-contraste");
+  const consulta = document.querySelector("main.container");
+
+  // Debug: checagens iniciais
+  if (!toggle) {
+    console.error("[MODO-ESC] toggle-contraste NÃO encontrado (id). Verifique se existe apenas UM elemento com esse id.");
+    return;
+  } else {
+    console.log("[MODO-ESC] toggle encontrado.");
+  }
+
+  if (!consulta) {
+    console.error("[MODO-ESC] área 'main.container' NÃO encontrada.");
+    return;
+  } else {
+    console.log("[MODO-ESC] área da consulta encontrada.");
+  }
+
+  // Restaurar estado salvo (opcional)
+  const estadoSalvo = localStorage.getItem("escuroConsulta");
+  if (estadoSalvo === "true") {
+    toggle.checked = true;
+    consulta.classList.add("escuro-consulta");
+    console.log("[MODO-ESC] restaurado: ativo");
+  } else {
+    toggle.checked = false;
+    consulta.classList.remove("escuro-consulta");
+    console.log("[MODO-ESC] restaurado: inativo");
+  }
+
+  // Event listener
+  toggle.addEventListener("change", function () {
+    const ativo = !!this.checked;
+    consulta.classList.toggle("escuro-consulta", ativo);
+    localStorage.setItem("escuroConsulta", ativo ? "true" : "false");
+    console.log("[MODO-ESC] toggle mudou para:", ativo);
+  });
+
+  // Extra: clique na label também deve mudar (por padrão já muda, mas só pra garantir)
+  const label = toggle.closest("label");
+  if (label) {
+    label.addEventListener("click", function (e) {
+      // delay curto para deixar o checkbox atualizar antes de aplicar a classe
+      setTimeout(() => {
+        const ativo = !!toggle.checked;
+        consulta.classList.toggle("escuro-consulta", ativo);
+        localStorage.setItem("escuroConsulta", ativo ? "true" : "false");
+        console.log("[MODO-ESC] clique na label -> ativo:", ativo);
+      }, 10);
+    });
+  }
+});
+</script>
+
+
+<script>
+
+  // === FONTE A+/A- (mantenha isso) ===
+    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
+    const html = document.documentElement;
+    html.style.fontSize = tamanhoFonte + "%";
+
+    document.getElementById("aumentar-fonte").addEventListener("click", function () {
+      if (tamanhoFonte < 70) {
+        tamanhoFonte += 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+    document.getElementById("diminuir-fonte").addEventListener("click", function () {
+      if (tamanhoFonte > 40) {
+        tamanhoFonte -= 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+</script>
+
+<!--Imagem do café-->
+
+    <div class="home-container">
+        <section id="home">
+          <div class="content">
+            <h3>O MELHOR CAFÉ DA REGIÃO</h3>
+            <p>Cada xícara é um convite para desacelerar e saborear o que<br> há de melhor. Trabalhamos com grãos selecionados de origem<br> brasileira, preparados com carinho e atenção aos detalhes. </p>
+            <a href="#" class="btn">Pegue o seu agora</a>
+          </div>
+        </section>
+    </div>
+
+ 
+   <main class="container">
+    <h1 class="title">Consulta de Usuários</h1>
 
     <form method="GET" class="busca-form">
         <input 
@@ -101,33 +224,41 @@ $result = $stmt->get_result();
         </table>
     </div>
 </main>
+ 
 
-<footer class="footer">
-    <div class="footer-section footer-logo">
-        <img src="img/logo clara.jpeg" alt="Logo Raízes do Café">
+
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <img src="../img/logo clara.jpeg" alt="Raízes do Café" class="footer-logo">
         <p>
-            Raízes do café é a extensão da sua casa.<br>
-            A nossa casa existe para compartilhar o sabor dos bons momentos
-            com você e sua família.
+          Raízes do café é a extensão<br> da sua casa. A nossa casa<br> existe para compartilhar
+          o sabor<br> dos bons momentos com você e sua família.
         </p>
-    </div>
+      </div>
 
-    <div class="footer-section">
+      <div class="footer-col">
         <h3>POSTS RECENTES</h3>
-        <p>Raízes 2025 MARKETING DIGITAL E PERFORMANCE 360º</p>
-    </div>
+      </div>
 
-    <div class="footer-section">
+      <div class="footer-col">
         <h3>NOSSAS LOJAS</h3>
-        <p>Copacabana</p>
-        <p>Rio Sul</p>
-        <p>Barra da Tijuca</p>
+        <ul>
+          <li>Copacabana</li>
+          <li>Rio Sul</li>
+          <li>Barra da Tijuca</li>
+        </ul>
+      </div>
     </div>
-</footer>
 
-<div class="footer-bottom">
-    RAÍZES 2025 MARKETING DIGITAL E PERFORMANCE 360º
-</div>
-
-</body>
+    <div class="footer-bottom">
+      <p>RAÍZES 2025 MARKETING DIGITAL E PERFORMANCE <a href="#">360R.</a></p>
+      <div class="payment-icons">
+        <img src="../img/formas-de-pagamento 1.png" alt="Formas de pagamento">
+      </div>
+    </div>
+  </footer>
+    </body>
 </html>

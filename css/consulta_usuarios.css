@@ -540,30 +540,121 @@ h2.title {
   border-radius: 50%;
 }
 
-/* Quando ativado (modo claro) */
-input:checked + .slider {
-  background-color:#DCA153;
-   border-color: #552D0F;
-}
-input:checked + .slider:before {
-  transform: translateX(24px);
-  background-color: #552D0F;
-}
-
 /* Efeito ao passar o mouse */
 .toggle-switch:hover .slider {
   box-shadow: 0 0 8px rgba(220, 161, 83, 0.6);
 }
 
-body.modo-claro {
-  background-color: #000; /* Todo fundo vira preto, preenchendo gaps */
+
+main.container.escuro-consulta {
+  background-color: #0f0f10; 
+  color: #fff;
+  
+ 
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 40px 0 100px 0; 
+  box-sizing: border-box;
+  border-radius: 10px;
 }
 
 
-body.modo-claro .feedback-container {
-  background-color: #000; /* Preenche gap entre cards com preto */
+/* Formulário */
+main.container.escuro-consulta .busca-form input,
+main.container.escuro-consulta .busca-form button,
+main.container.escuro-consulta .btn-novo {
+  background-color: #000000 ;
+  color: #000000 ;
+  border: 1px solid #000000 ;
+}
+/* Tabela */
+main.container.escuro-consulta table {
+  background-color: #fffdfd ;
+  color: #fff ;
+  border: 1px solid #fff5f5 ;
 }
 
-body.modo-claro .feedback-section{
-  background-color: #000;
+main.container.escuro-consulta th {
+  background-color: #ffffff ;
+  color: #fffefc ;
 }
+
+main.container.escuro-consulta td {
+  background-color: #ffffff ;
+  color: #fff ;
+}
+
+main.container.escuro-consulta tr:nth-child(even) td {
+  background-color: #ffffff ;
+}
+
+/* Botões de ações */
+main.container.escuro-consulta .btn-editar {
+  background-color: #0d6efd ;
+}
+
+main.container.escuro-consulta .btn-excluir {
+  background-color: #aa1e1e ;
+}
+
+
+
+
+main.container.escuro-consulta .busca-form input {
+  background-color: #1b1b1b ;
+  color: #fff ;
+  border: 1px solid #3a3a3a ;
+}
+
+
+main.container.escuro-consulta .busca-form button {
+  background: var(--marrom) ;
+  color: #fff ;
+}
+
+main.container.escuro-consulta .btn-novo {
+  background: #2e7d32 ; 
+  color: #fff ;
+}
+
+main.container.escuro-consulta .busca-form input {
+  background-color: #fffdfd ;
+  color: #000000 ;
+  border: 1px solid #3a3a3a ;
+}
+
+main.container.escuro-consulta .busca-form button {
+  background-color: #4e2312;
+}
+
+
+/* Tabela */
+main.container.escuro-consulta .tabela {
+  background-color: #ffffff ;
+  border: 1px solid #ffffff;
+  color: #fff ;
+}
+
+main.container.escuro-consulta .tabela th {
+  background-color: #5b2b17;
+  color: #ffffff;
+}
+
+main.container.escuro-consulta .tabela td {
+  background-color: transparent ;
+  color: #000000 ;
+}
+
+main.container.escuro-consulta .tabela tr:nth-child(even) td {
+  background-color: #ffffff ;
+}
+
+/* Botões */
+main.container.escuro-consulta .btn-editar { background-color: #0d6efd; }
+main.container.escuro-consulta .btn-excluir { background-color: #b02a37 ; }
+
+
+
+
+

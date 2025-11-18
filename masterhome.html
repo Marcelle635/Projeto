@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raízes do café</title>
-    <link rel="stylesheet" href="comum.css">
+    <link rel="stylesheet" href="master.css">
 </head>
-<body>
-   <!--Menu com funcionalidades-->
+<body class="dark-mode">
+    <!--Menu com funcionalidades-->
     <header class="header">
   <section>
     <!-- Lado esquerdo: Logo + Navegação -->
@@ -17,26 +17,32 @@
       </a>
 
       <nav class="navbar">
-        <a href="comum.html">Home</a>
-        <a href="menucomum.html">Menu</a>
+        <a href="masterhome.html">Home</a>
+        <a href="mastermenu.html">Menu</a>
+        <a href="../pages/consulta_usuarios.php">Consulta de Usuários</a>
       </nav>
     </div>
 
     <!-- Lado direito: Botões e links -->
     <div class="areas">
+     
+
       
-      
-      <!--trilho e indicador pra botar o escuro e claro-->
+       
+
       <div class="trilho">
-        <div class="indicador"></div>
-      </div> <!-- BOTÃO DESLIZANTE -->
+        
+        <div class="indicador"> </div>
+        
+      </div>  <!-- BOTÃO DESLIZANTE -->
 <label class="toggle-switch" title="Alternar modo escuro/claro">
   <input type="checkbox" id="toggle-contraste">
   <span class="slider"></span>
-</label>  |
- <div class="areas">
+</label> | 
+       <div class="areas">
       <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button> |</div>
+   
     </div>
   </section>
 </header>
@@ -64,7 +70,7 @@
       }
     });
 
-   // === FONTE A+/A- (mantenha isso) ===
+    // === FONTE A+/A- (mantenha isso) ===
     let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
     const html = document.documentElement;
     html.style.fontSize = tamanhoFonte + "%";
@@ -100,102 +106,55 @@
           </div>
         </section>
     </div>
-
-    <!--Menu e cards-->
-<section class="menu" id="menu">
-        <h2 class="title">Menu</h2>
-        <h3 class="timenor">Cafés</h3>
-        <div class="box-container">
-            <div class="box">
-            <img src="img/promocao.png" alt="Café promocional">
-            <h3>Café promocional</h3>
-            <div class="price">R$ 25,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/expresso.png" alt="Café Expresso">
-            <h3>Café Expresso</h3>
-            <div class="price">R$ 9,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/marshmallow.png" alt="Café com marshmallow">
-            <h3>Café cremoso com marshmallow</h3>
-            <div class="price">R$ 19,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/chocolate.PNG" alt="Café com chocolate">
-            <h3>Café cremoso com chocolate</h3>
-            <div class="price">R$ 19,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-        </div>
-        <h3 class="timenor">Doces</h3>
-<div class="box-container">
-            <div class="box">
-            <img src="img/petit.png" alt="Petit gâteau">
-            <h3>Petit gâteau</h3>
-            <div class="price">R$ 25,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/bolochocolate.png" alt="Bolo de chocolate ">
-            <h3>Bolo de chocolate</h3>
-            <div class="price">R$ 12,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/bolomorango.png" alt="Bolo de morango">
-            <h3>Bolo de morango</h3>
-            <div class="price">R$ 12,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/donuts.png" alt="Donuts">
-            <h3>Donuts</h3>
-            <div class="price">R$ 35,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-        </div>
-        <div class="box-container">
-            <div class="box">
-            <img src="img/cupchocolate.png" alt="Cupcake de chocolate">
-            <h3>Cupcake de chocolate</h3>
-            <div class="price">R$ 12,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/cupmorango.png" alt="Cupcake de morango">
-            <h3>Cupcake de morango</h3>
-            <div class="price">R$ 12,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/bombom.png" alt="Caixa de bombom ">
-            <h3>Caixa de bombom </h3>
-            <div class="price">R$ 20,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-
-            <div class="box">
-            <img src="img/Cabombom.png" alt="Caixa de bombom ">
-            <h3>Caixa de bombom </h3>
-            <div class="price">R$ 20,99</div>
-            <a href="#" class="btn">Comprar</a>
-            </div>
-        </div>
-    </section>
+   
+  
     
-     <!-- RODAPÉ -->
+       
+          
+         
+            <!-- SOBRE NÓS -->
+               <section class="about" id="about">
+          <h2 class="title">Sobre Nós</h2>
+          <div class="row">
+              <div class="container-imagem">
+                  <img src="img/cast.png" alt="Café">
+              </div>
+              <div class="cont">
+                  <h3>O que faz nosso café ser especial? </h3>
+                  <p>A cafeteria Raízes do Café se destaca pela qualidade,<br> oferecendo grãos especiais provenientes de pequenos<br> produtores e um processo de torra artesanal que garante<br> sabores e aromas únicos. O ambiente é acolhedor e<br> familiar, perfeito para quem busca um momento de<br> relaxamento ou um espaço para reuniões. Ao consumir no<br> Raízes do Café, você não só desfruta de uma bebida<br> excepcional, mas também contribui para uma cadeia de<br> produção mais justa alinhada com valores que vão além<br> da xícara.</p>
+              </div>
+          </div>
+             </section>
+         
+             <!-- FEEDBACK -->
+           <section class="feedback-section">
+             <h2>Feedback</h2>
+             
+             <div class="feedback-container">
+          <div class="feedback-card">
+          <h3>Marina Santos</h3>
+          <p>Adorei o café, é realmente especial e com um sabor que se destaca. O bolo de chocolate perfeito!</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Caleb Vieira</h3>
+          <p>O cupcake de morango é sensacional e o ambiente é super aconchegante.</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Patrícia Rocha</h3>
+          <p>O café cremoso é delicioso e o atendimento faz toda diferença.</p>
+               </div>
+               <div class="feedback-card">
+          <h3>Samuel Ferreira</h3>
+          <p>O petit gateau e os chocolates são imperdíveis. O melhor café da região!</p>
+               </div>
+             </div>
+           </section>
+          </div>
+        
+      
+      
+
+  <!-- RODAPÉ -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">
@@ -227,5 +186,5 @@
       </div>
     </div>
   </footer>
-    </body>
+</body>
 </html>

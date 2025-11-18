@@ -1,23 +1,16 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
+  if($_SESSION['user']['perfil'] === 'master'){
+    header("Location: consulta_usuarios.php");
+  } else {
+    header("Location: menucomum.html");
+  }
+  exit;
+}
 
 $erro = $_GET['erro'] ?? '';
-
-if (isset($_SESSION['user_temp'])) {
-    header("Location: 2fa.php");
-    exit;
-}
-
-if (isset($_SESSION['user'])) {
-    if ($_SESSION['user']['perfil'] === 'master') {
-        header("Location: consulta_usuarios.php");
-    } else {
-        header("Location: menucomum.html");
-    }
-    exit;
-}
-?>  
-
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

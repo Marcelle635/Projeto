@@ -1,64 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 :root {
-  --marrom: #4b2e14;
-  --marrom-claro: #6b3e1e;
-  --dourado: #caa472;
-  --bege-fundo: #d9a86c;
+  --marrom: #552D0F;
+  --marrom-claro: #552D0F;
+  --dourado:#DCA153;
+  --bege-fundo: #DCA153;
   --branco-transp: rgba(255, 255, 255, 0.9);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+   
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: url('img/principal.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #2c1b0d;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-.header {
-  background: var(--marrom);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
-  height: 70px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+body{
+    background: color #ffffff;
 }
 
-.logo {
-  height: 60px;
-  display: flex;
-  align-items: center;
+
+/*O header é o Menu */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: var(--branco-transp);
+    background-color: var(--marrom);
+}
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
+/* Agrupa logo + navbar no lado esquerdo */
+.left-side {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
 .logo img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
+    height: 50px; /* ajuste conforme sua logo */
+    margin-right: 2rem;
 }
 
+/* Navegação */
 .navbar a {
-  color: #f7e4c8;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--dourado);
 }
 
-.navbar a:hover,
-.navbar a.ativo {
+.navbar a:hover {
+    color: #ffffff;
+    border-bottom: 0.1rem solid #ffffff;
+    padding-bottom: 0.5rem;
+    font-size: 2.1rem;
+}
+
+/* Lado direito: áreas */
+.areas {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--dourado);
+}
+
+.areas a, .areas button {
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--dourado);
+    background-color: #552D0F;
+    border: none;
+    cursor: pointer;
+}
+
+.areas button:hover,
+.areas a:hover {
+    color: #ffffff;
+    border-bottom: 0.1rem solid #ffffff;
+    padding-bottom: 0.5rem;
+}
+
+/*IMagem do café*/
+.home-container{
+    background: url("../img/principal.png");
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.home-container section{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+.content{
+  max-width: 60rem;
+}
+.content h3{
   color: #fff;
-  text-decoration: underline;
+  font-size: 6rem;
+}
+.content p{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 1.8;
+  padding: 1rem 0;
+  margin-bottom: 4rem;
+}
+
+/* Botão */
+.btn {
+  background-color: var(--main-color, #ffc107); /* Fallback amarelo */
+  color: #000;
+  padding: 1rem 3rem; /* antes era 0.5rem 1rem */
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px; /* Arredonda botão */
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #e0a800; /* Cor ao passar o mouse */
+}
+
+.title{
+    font-size: 2.5rem;
+    color:var(--marrom);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
 }
 
 .container {
@@ -187,43 +279,77 @@ background: #1565c0;
   background: #e74c3c;
 }
 
+/*Rodapé*/
 .footer {
-  background: var(--marrom);
-  color: #f7e4c8;
+  background-color: #4e2312; /* marrom escuro */
+  color: #fff;
+  padding: 40px 20px 10px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 30px 50px;
-  font-size: 14px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.footer-section {
-  max-width: 250px;
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
 }
 
-.footer-logo img {
-  height: 70px;
-  margin-bottom: 10px;
+.footer-logo {
+  width: 120px;
+  margin-bottom: 15px;
 }
 
-.footer h3 {
-  margin-bottom: 10px;
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
   color: #fff;
 }
 
-.footer p,
-.footer a {
-  color: #f7e4c8;
-  text-decoration: none;
-  line-height: 1.5;
+.footer-col p {
+  line-height: 2;
+  font-size: 15px;
+  margin-bottom: 8rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .footer-bottom {
-  text-align: center;
-  background-color: #3b220e;
-  color: #c7b39a;
-  padding: 10px;
-  font-size: 13px;
+  border-top: 1px solid #5b2b17;
+  margin-top: 30px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.payment-icons img {
+  width: 300px;
+  margin: 0 5px;
+  vertical-align: middle;
 }
 
 @media (max-width: 768px) {
@@ -338,4 +464,106 @@ gap: 8px;
 
 .form-excluir {
   display: inline !important;
+}
+/* ===== FONTES RESPONSIVAS ===== */
+h1, h2, h3, p, a, li, footer, button {
+  font-size: 1rem; 
+}
+
+h2.title {
+  font-size: 3rem;
+}
+
+.feedback-card h3 {
+  font-size: 2rem;
+}
+
+.feedback-card p {
+  font-size: 1.6rem;
+}
+
+.footer p, 
+.footer li, 
+.footer a {
+  font-size: 1.5rem;
+}
+
+.footer h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+}
+
+
+
+/* ====== BOTÃO DESLIZANTE (TOGGLE SWITCH) ====== */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #552D0F;
+  transition: .4s;
+  border-radius: 34px;
+  border: 2px solid #DCA153;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #DCA153;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* Quando ativado (modo claro) */
+input:checked + .slider {
+  background-color:#DCA153;
+   border-color: #552D0F;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: #552D0F;
+}
+
+/* Efeito ao passar o mouse */
+.toggle-switch:hover .slider {
+  box-shadow: 0 0 8px rgba(220, 161, 83, 0.6);
+}
+
+body.modo-claro {
+  background-color: #000; /* Todo fundo vira preto, preenchendo gaps */
+}
+
+
+body.modo-claro .feedback-container {
+  background-color: #000; /* Preenche gap entre cards com preto */
+}
+
+body.modo-claro .feedback-section{
+  background-color: #000;
 }

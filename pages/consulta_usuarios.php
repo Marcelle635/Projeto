@@ -47,7 +47,7 @@ $result = $stmt->get_result();
       </nav>
     
         
-        <a href="../auth/logout.php">Sair</a>
+       
     </div>
 <!-- Lado direito: Botões e links -->
     <div class="areas">
@@ -62,7 +62,40 @@ $result = $stmt->get_result();
 </label>  |
  <div class="areas">
       <button id="aumentar-fonte">A+</button>
-      <button id="diminuir-fonte">A-</button> |</div>
+      <button id="diminuir-fonte">A-</button> | 
+   
+    <?php
+$usuarioLogado = $_SESSION['user']['nome'];
+?>
+<!-- Menu do usuário -->
+<div class="menu-usuario">
+    <span class="usuario-nome"> Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
+    <i class="arrow"></i>
+
+    <div class="dropdown">
+        <a href="../auth/logout.php" class="logout-btn">Sair</a>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu-usuario");
+
+    menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    // Fechar dropdown ao clicar fora
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
+});
+</script>
+
+
+</div>
     </div>
   </section>
 </header>

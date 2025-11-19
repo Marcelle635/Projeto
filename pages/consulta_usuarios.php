@@ -41,8 +41,8 @@ $result = $stmt->get_result();
       </a>
 
       <nav class="navbar">
-        <a href="../masterhome.html">Home</a>
-        <a href="../mastermenu.html">Menu</a>
+        <a href="../pages/masterhome.php">Home</a>
+        <a href="../pages/mastermenu.php">Menu</a>
         <a href="consulta_usuarios.php">Consulta de Usuários</a>
       </nav>
     

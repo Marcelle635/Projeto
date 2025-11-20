@@ -118,37 +118,52 @@ function formatarTextoAcao($acao) {
     <link rel="stylesheet" href="../css/logs.css">
 </head>
 <body>
+    <!--Menu com funcionalidades-->
     <header class="header">
-        <div class="left-side">
-            <a href="#" class="logo">
-                <img src="../img/logo.png" alt="logo">
-            </a>
-            <nav class="navbar">
-                <a href="masterhome.php">Home</a>
-                <a href="mastermenu.php">Menu</a>
-                <a href="consulta_usuarios.php">Consulta de Usuários</a>
-                <a href="logs.php">Logs</a>
-            </nav>
-        </div>
+  <section>
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="../img/logo.png" alt="logo">
+      </a>
 
-        <div class="areas">
-            <label class="toggle-switch" title="Alternar modo escuro/claro">
-                <input type="checkbox" id="toggle-contraste">
-                <span class="slider"></span>
-            </label> |
-            <button id="aumentar-fonte">A+</button> 
-            <button id="diminuir-fonte">A-</button> |
-            <div class="menu-usuario">
-                <span class="usuario-nome">
-                    Bem-vindo(a), <strong><?php echo htmlspecialchars($_SESSION['user']['nome']); ?></strong>
-                </span>
-                <div class="arrow"></div>
-                <div class="dropdown">
-                    <a href="../auth/logout.php" class="logout-btn">Sair</a>
-                </div>
-            </div>
+      <nav class="navbar">
+        <a href="../pages/masterhome.php">Home</a>
+        <a href="../pages/mastermenu.php">Menu</a>
+        <a href="consulta_usuarios.php">Consulta de Usuários</a>
+        <a href="logs.php">Logs</a>
+      </nav>
+    </div>
+
+    <!-- Lado direito -->
+    <div class="areas">
+
+      <!-- Botão escuro/claro -->
+      <label class="toggle-switch" title="Alternar modo escuro/claro">
+        <input type="checkbox" id="toggle-contraste">
+        <span class="slider"></span>
+      </label> |
+
+      <!-- Aumentar/diminuir fonte -->
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> |
+
+      <!-- Menu do usuário -->
+      <?php $usuarioLogado = $_SESSION['user']['nome']; ?>
+
+      <div class="menu-usuario">
+        <span class="usuario-nome">
+          Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
+        </span>
+
+        <div class="arrow"></div>
+
+        <div class="dropdown">
+          <a href="../auth/logout.php" class="logout-btn">Sair</a>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
+</header>
 <!--Imagem do café-->
 
     <div class="home-container">
@@ -338,5 +353,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="../img/logo clara.jpeg" alt="Raízes do Café" class="footer-logo">
+                <p>
+                    Raízes do café é a extensão<br> da sua casa. A nossa casa<br> existe para compartilhar
+                    o sabor<br> dos bons momentos com você e sua família.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3>POSTS RECENTES</h3>
+            </div>
+
+            <div class="footer-col">
+                <h3>NOSSAS LOJAS</h3>
+                <ul>
+                    <li>Copacabana</li>
+                    <li>Rio Sul</li>
+                    <li>Barra da Tijuca</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>RAÍZES 2025 MARKETING DIGITAL E PERFORMANCE <a href="#">360R.</a></p>
+            <div class="payment-icons">
+                <img src="../img/formas-de-pagamento 1.png" alt="Formas de pagamento">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

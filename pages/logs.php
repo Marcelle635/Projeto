@@ -135,9 +135,9 @@ function formatarTextoAcao($acao) {
             <label class="toggle-switch" title="Alternar modo escuro/claro">
                 <input type="checkbox" id="toggle-contraste">
                 <span class="slider"></span>
-            </label>
-            <button id="aumentar-fonte">A+</button>
-            <button id="diminuir-fonte">A-</button>
+            </label> |
+            <button id="aumentar-fonte">A+</button> 
+            <button id="diminuir-fonte">A-</button> |
             <div class="menu-usuario">
                 <span class="usuario-nome">
                     Bem-vindo(a), <strong><?php echo htmlspecialchars($_SESSION['user']['nome']); ?></strong>
@@ -149,7 +149,17 @@ function formatarTextoAcao($acao) {
             </div>
         </div>
     </header>
+<!--Imagem do café-->
 
+    <div class="home-container">
+        <section id="home">
+          <div class="content">
+            <h3>O MELHOR CAFÉ DA REGIÃO</h3>
+            <p>Cada xícara é um convite para desacelerar e saborear o que<br> há de melhor. Trabalhamos com grãos selecionados de origem<br> brasileira, preparados com carinho e atenção aos detalhes. </p>
+            <a href="#" class="btn">Pegue o seu agora</a>
+          </div>
+        </section>
+    </div>
     <main class="container-logs">
         <div class="logs-header">
             <h1>Logs de Autenticação</h1>
@@ -302,5 +312,31 @@ function formatarTextoAcao($acao) {
         });
     });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("toggle-contraste");
+  const logsContainer = document.querySelector("main.container-logs");
+
+  if (!toggle || !logsContainer) return;
+
+  // Restaura estado salvo
+  const estadoSalvo = localStorage.getItem("escuroLogs");
+  if (estadoSalvo === "true") {
+    toggle.checked = true;
+    logsContainer.classList.add("escuro-logs");
+  } else {
+    toggle.checked = false;
+    logsContainer.classList.remove("escuro-logs");
+  }
+
+  // Evento de troca
+  toggle.addEventListener("change", function () {
+    const ativo = this.checked;
+    logsContainer.classList.toggle("escuro-logs", ativo);
+    localStorage.setItem("escuroLogs", ativo ? "true" : "false");
+  });
+});
+</script>
+
 </body>
 </html>

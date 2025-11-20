@@ -5,6 +5,8 @@
   --marrom-claro: #6b3e1e;
   --dourado: #caa472;
   --texto: #2c1b0d;
+  --cinza: #8d8d8d;
+  --cinza-claro: #e0e0e0;
 }
 
 * {
@@ -114,22 +116,47 @@ body::before {
   box-shadow: 0 0 5px var(--dourado);
 }
 
-.login-form button {
+.botoes-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.btn-entrar {
   background-color: var(--marrom);
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 10px 25px;
+  padding: 12px 25px;
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s;
-  margin-top: 10px;
+  flex: 1;
 }
 
-.login-form button:hover {
+.btn-entrar:hover {
   background-color: var(--marrom-claro);
   color: var(--dourado);
+  transform: translateY(-1px);
+}
+
+.btn-limpar {
+  background-color: var(--cinza-claro);
+  color: var(--cinza);
+  border: 2px solid var(--cinza);
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.btn-limpar:hover {
+  background-color: var(--cinza);
+  color: #fff;
   transform: translateY(-1px);
 }
 

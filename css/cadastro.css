@@ -1,4 +1,3 @@
-
 :root{
     --main-color:#DCA153;
     --black:#552D0F;
@@ -21,7 +20,7 @@ section{
     margin: 0 auto;
     max-width: 1200px;
 }
-/*O header é o Menu */
+
 .header{
     position: fixed;
     top: 0;
@@ -31,6 +30,7 @@ section{
     border-bottom: var(--border);
     background-color: var(--black);
 }
+
 .header section {
     display: flex;
     align-items: center;
@@ -39,19 +39,16 @@ section{
     padding-bottom: 1.5rem;
 }
 
-/* Agrupa logo + navbar no lado esquerdo */
 .left-side {
     display: flex;
     align-items: center;
 }
 
-/* Logo */
 .logo img {
-    height: 50px; /* ajuste conforme sua logo */
+    height: 50px;
     margin-right: 2rem;
 }
 
-/* Navegação */
 .navbar a {
     margin: 0 1rem;
     font-size: 2rem;
@@ -65,7 +62,6 @@ section{
     font-size: 2.1rem;
 }
 
-/* Lado direito: áreas */
 .areas {
     display: flex;
     align-items: center;
@@ -89,8 +85,6 @@ section{
     padding-bottom: 0.5rem;
 }
 
-
-/*Imagem de fundo*/
 body {
   background: url("../img/principal.png");
   height: 100vh;
@@ -98,7 +92,6 @@ body {
   background-size: cover;
 }
 
-/*Formulário*/
 main {
   background-color: #afaaaada;
   width: 60%;
@@ -116,7 +109,7 @@ h1 {
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 40px; /* espaçamento entre linhas e colunas */
+  gap: 20px 40px;
 }
 
 .label {
@@ -126,15 +119,8 @@ form {
   margin-bottom: 5px;
 }
 
-input {
+input, .select {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-}
-
-.select {
- width: 100%;
   padding: 8px;
   border: 1px solid #aaa;
   border-radius: 6px;
@@ -142,7 +128,7 @@ input {
 
 input::placeholder {
   color: black;   
-  opacity: 1; /* garante que a cor apareça 100% */
+  opacity: 1;
 }
 
 .full-width {
@@ -153,6 +139,9 @@ input::placeholder {
   grid-column: span 2;
   text-align: center;
   margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
 main button {
@@ -162,12 +151,21 @@ main button {
   padding: 10px 30px;
   border-radius: 10px;
   font-size: 16px;
-  margin: 0 10px;
   cursor: pointer;
+  flex: 1;
+  max-width: 200px;
 }
 
 main button:hover {
   background-color: #4b2e0f;
+}
+
+main button[type="button"] {
+  background-color: #6c757d;
+}
+
+main button[type="button"]:hover {
+  background-color: #545b62;
 }
 
 .span-required {
@@ -175,9 +173,4 @@ main button:hover {
   display: none;
   margin: 3px 0 0 1px;
   color: #FF0000;
-}
-
-.campo-oculto {
-    /*esconde a <div> */
-    display: none; 
 }

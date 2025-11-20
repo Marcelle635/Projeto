@@ -124,7 +124,7 @@ body::before {
 
 .btn-entrar {
   background-color: var(--marrom);
-  color: #fff;
+  color: var(--dourado);
   border: none;
   border-radius: 8px;
   padding: 12px 25px;
@@ -137,7 +137,7 @@ body::before {
 
 .btn-entrar:hover {
   background-color: var(--marrom-claro);
-  color: var(--dourado);
+  color: #fff;
   transform: translateY(-1px);
 }
 

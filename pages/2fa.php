@@ -11,7 +11,7 @@ $perguntas = [
     'endereco'     => 'Insira seu endereço:'
 ];
 
-if(!isset($_SESSION['campo2fa'])){
+if(!isset($_SESSION['campo2fa']) || ($_SESSION['tentativas_2fa'] ?? 0) > 0){
     $keys = array_keys($perguntas);
     $_SESSION['campo2fa'] = $keys[array_rand($keys)];
 }
@@ -27,13 +27,10 @@ $t = $_SESSION['tentativas_2fa'] ?? 0;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verificação 2FA - Raízes do Café</title>
-
-  
   <link rel="stylesheet" href="../css/2fa.css">
 </head>
 <body>
 
-  
   <header class="header">
     <div class="logo">
       <img src="../img/logo.png" alt="Logo Raízes do Café">
@@ -42,16 +39,14 @@ $t = $_SESSION['tentativas_2fa'] ?? 0;
     <nav class="navbar">
       <a href="inicio.html">Home</a>
       <a href="menucomum.html">Menu</a>
-      <a href="login.php">Login</a>
       <a href="cadastro.php">Cadastre-se</a>
     </nav>
   </header>
 
- 
   <main class="container">
     <form action="../auth/valida_2fa.php" method="POST" class="form-2fa">
       <label for="resposta"><?php echo strtoupper($texto); ?></label>
-      <input type="text" id="resposta" name="resposta" required>
+      <input type="text" id="resposta" name="resposta" required autofocus>
       <button type="submit">ENVIAR</button>
 
       <?php if(isset($_GET['erro'])): ?>

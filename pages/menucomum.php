@@ -41,6 +41,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
 
       <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button> |
+
       <?php $usuarioLogado = $_SESSION['user']['nome']; ?>
 
       <div class="menu-usuario">
@@ -117,9 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 </script>
-
-
-
     <div class="home-container">
         <section id="home">
           <div class="content">

@@ -44,6 +44,6 @@ $erro = $_GET['erro'] ?? '';
         <p class="erro">Muitas tentativas. Tente novamente mais tarde.</p>
       <?php endif; ?>
     </form>
-  </main>
+  </main> 
 </body>
 </html>

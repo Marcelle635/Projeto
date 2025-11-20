@@ -31,6 +31,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
         <a href="../pages/masterhome.php">Home</a>
         <a href="../pages/mastermenu.php">Menu</a>
         <a href="consulta_usuarios.php">Consulta de Usuários</a>
+        <a href="logs.php">Logs</a>
       </nav>
     </div>
 

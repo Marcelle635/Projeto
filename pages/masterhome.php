@@ -56,7 +56,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
       <button id="diminuir-fonte">A-</button> |
     <!-- Menu do usuário -->
 <div class="menu-usuario">
-    <span class="usuario-nome">Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
+    <span class="usuario-nome">Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
     <i class="arrow"></i>
 
     <div class="dropdown">

@@ -51,7 +51,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
 
       <div class="menu-usuario">
         <span class="usuario-nome">
-          Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
+          Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
         </span>
 
         <div class="arrow"></div>

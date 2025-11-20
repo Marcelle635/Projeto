@@ -255,6 +255,9 @@ input:checked + .slider:before {
   color: #fff;
 }
 
+.menu-usuario {
+    margin-left: 15px; /* Aumente se quiser mais espaço */
+}
 /* ===== MAIN ===== */
 .container-logs {
   margin-top: 0;

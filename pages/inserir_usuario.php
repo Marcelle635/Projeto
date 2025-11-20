@@ -94,8 +94,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <img src="../img/logo.png" alt="Logo Raízes do Café">
   </div>
   <nav class="navbar">
-    <a href="painel_master.php">Painel</a>
-    <a href="consulta_usuarios.php">Consulta</a>
+     <a href="masterhome.php">Home</a>
+        <a href="mastermenu.php">Menu</a>
     <a href="../auth/logout.php">Sair</a>
   </nav>
 </header>

@@ -515,6 +515,9 @@ body.modo-claro .feedback-section{
   transform: rotate(-135deg);
 }
 
+.menu-usuario {
+    margin-left: 15px; /* Aumente se quiser mais espaço */
+}
 
 
 

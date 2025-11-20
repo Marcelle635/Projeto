@@ -27,7 +27,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
       </a>
 
       <nav class="navbar">
-        <a href="../pages/comum.html">Home</a>
+        <a href="../pages/comum.php">Home</a>
         <a href="../pages/menucomum.php">Menu</a>
         
       </nav>

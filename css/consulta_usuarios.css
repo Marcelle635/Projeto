@@ -709,3 +709,6 @@ main.container.escuro-consulta .btn-excluir { background-color: #b02a37 ; }
   transform: rotate(-135deg);
 }
 
+.menu-usuario {
+    margin-left: 15px; /* Aumente se quiser mais espaço */
+}

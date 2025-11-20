@@ -22,43 +22,48 @@ $usuarioLogado = $_SESSION['user']['nome'];
    <!--Menu com funcionalidades-->
     <header class="header">
   <section>
-    <!-- Lado esquerdo: Logo + Navegação -->
     <div class="left-side">
       <a href="#" class="logo">
         <img src="../img/logo.png" alt="logo">
       </a>
 
       <nav class="navbar">
-        <a href="masterhome.php">Home</a>
-        <a href="mastermenu.php">Menu</a>
-        <a href="../pages/consulta_usuarios.php">Consulta de Usuários</a>
+        <a href="../pages/masterhome.php">Home</a>
+        <a href="../pages/mastermenu.php">Menu</a>
+        <a href="consulta_usuarios.php">Consulta de Usuários</a>
       </nav>
     </div>
 
-    <!-- Lado direito: Botões e links -->
+    <!-- Lado direito -->
     <div class="areas">
-      
-      
-      <!--trilho e indicador pra botar o escuro e claro-->
-      <div class="trilho">
-        <div class="indicador"></div>
-      </div> <!-- BOTÃO DESLIZANTE -->
-<label class="toggle-switch" title="Alternar modo escuro/claro">
-  <input type="checkbox" id="toggle-contraste">
-  <span class="slider"></span>
-</label>  |
- <div class="areas">
-      <button id="aumentar-fonte">A+</button>
-      <button id="diminuir-fonte">A-</button> |  
-    <!-- Menu do usuário -->
-<div class="menu-usuario">
-    <span class="usuario-nome">Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
-    <i class="arrow"></i>
 
-    <div class="dropdown">
-        <a href="../auth/logout.php" class="logout-btn">Sair</a>
+      <!-- Botão escuro/claro -->
+      <label class="toggle-switch" title="Alternar modo escuro/claro">
+        <input type="checkbox" id="toggle-contraste">
+        <span class="slider"></span>
+      </label> |
+
+      <!-- Aumentar/diminuir fonte -->
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> |
+
+      <!-- Menu do usuário -->
+      <?php $usuarioLogado = $_SESSION['user']['nome']; ?>
+
+      <div class="menu-usuario">
+        <span class="usuario-nome">
+          Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
+        </span>
+
+        <div class="arrow"></div>
+
+        <div class="dropdown">
+          <a href="../auth/logout.php" class="logout-btn">Sair</a>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
+</header>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -68,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.toggle("active");
     });
 
-    // Fechar dropdown ao clicar fora
     document.addEventListener("click", (e) => {
         if (!menu.contains(e.target)) {
             menu.classList.remove("active");
@@ -76,10 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
-    </div>
-    </div>
-  </section>
-</header>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

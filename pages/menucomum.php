@@ -18,7 +18,6 @@ $usuarioLogado = $_SESSION['user']['nome'];
     <link rel="stylesheet" href="../css/comum.css">
 </head>
 <body>
-   <!--Menu com funcionalidades-->
     <header class="header">
   <section>
     <div class="left-side">
@@ -29,24 +28,19 @@ $usuarioLogado = $_SESSION['user']['nome'];
       <nav class="navbar">
         <a href="../pages/comum.php">Home</a>
         <a href="../pages/menucomum.php">Menu</a>
-        
+        <a href="alterar_senha.php" class="menu-link">Alterar Senha</a>
       </nav>
     </div>
 
-    <!-- Lado direito -->
     <div class="areas">
 
-      <!-- Botão escuro/claro -->
       <label class="toggle-switch" title="Alternar modo escuro/claro">
         <input type="checkbox" id="toggle-contraste">
         <span class="slider"></span>
       </label> |
 
-      <!-- Aumentar/diminuir fonte -->
       <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button> |
-
-      <!-- Menu do usuário -->
       <?php $usuarioLogado = $_SESSION['user']['nome']; ?>
 
       <div class="menu-usuario">
@@ -86,14 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkbox = document.getElementById("toggle-contraste");
     const body = document.body;
 
-    // Carregar estado salvo
     const modoSalvo = localStorage.getItem("contrasteConteudo") || "escuro";
     if (modoSalvo === "claro") {
       body.classList.add("modo-claro");
       checkbox.checked = true;
     }
 
-    // Alternar ao clicar
     checkbox.addEventListener("change", function () {
       if (this.checked) {
         body.classList.add("modo-claro");
@@ -104,7 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-   // === FONTE A+/A- (mantenha isso) ===
     let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
     const html = document.documentElement;
     html.style.fontSize = tamanhoFonte + "%";
@@ -129,8 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-<!--Imagem do café-->
     <div class="home-container">
         <section id="home">
           <div class="content">
@@ -141,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </section>
     </div>
 
-    <!--Menu e cards-->
 <section class="menu" id="menu">
         <h2 class="title">Menu</h2>
         <h3 class="timenor">Cafés</h3>
@@ -235,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
     </section>
     
-     <!-- RODAPÉ -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">

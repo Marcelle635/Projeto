@@ -11,7 +11,7 @@ if(empty($login) || empty($senha)){
     exit;
 }
 
-$stmt = mysqli_prepare($conn, "SELECT id, nome, login, senha, perfil, nome_materno, data_nasc FROM users WHERE login = ?");
+$stmt = mysqli_prepare($conn, "SELECT id, nome, login, senha, perfil, nome_materno, data_nasc, endereco FROM users WHERE login = ?");
 mysqli_stmt_bind_param($stmt, "s", $login);
 mysqli_stmt_execute($stmt);
 $res = mysqli_stmt_get_result($stmt);
@@ -44,17 +44,36 @@ if(!$login_ok){
     exit;
 }
 
-$_SESSION['user'] = [
-    'id' => $user['id'],
-    'nome' => $user['nome'],
-    'login' => $user['login'],
-    'perfil' => $user['perfil'],
-    'nome_materno' => $user['nome_materno'],
-    'data_nasc' => $user['data_nasc'],
-];
-$_SESSION['tentativas_2fa'] = 0;
+if($user['perfil'] === 'comum') {
+    $_SESSION['user_temp'] = [
+        'id' => $user['id'],
+        'nome' => $user['nome'],
+        'login' => $user['login'],
+        'perfil' => $user['perfil'],
+        'nome_materno' => $user['nome_materno'],
+        'data_nasc' => $user['data_nasc'],
+        'endereco' => $user['endereco']
+    ];
+    
+    $_SESSION['tentativas_2fa'] = 0;
+    
+    $perguntas = ['nome_materno', 'data_nasc', 'endereco'];
+    $_SESSION['campo2fa'] = $perguntas[array_rand($perguntas)];
+    
+    grava_log($conn, $user['id'], $login, 'login_ok', 'senha validada, redirecionando para 2FA', $ip);
+    header("Location: ../pages/2fa.php");
+    exit;
+} else {
 
-grava_log($conn, $user['id'], $login, 'login_ok', 'senha validada, aguardando 2FA', $ip);
-
-header("Location: ../pages/2fa.php");
-exit;
+    $_SESSION['user'] = [
+        'id' => $user['id'],
+        'nome' => $user['nome'],
+        'login' => $user['login'],
+        'perfil' => $user['perfil']
+    ];
+    
+    grava_log($conn, $user['id'], $login, 'login_ok', 'login direto (perfil master)', $ip);
+    header("Location: ../pages/consulta_usuarios.php");
+    exit;
+}
+?>

@@ -205,6 +205,9 @@ document.addEventListener("DOMContentLoaded", function () {
             >
             <button type="submit">Buscar</button>
             <a href="inserir_usuario.php" class="btn-novo">Adicionar Usuário</a>
+            <a href="../config/gerar_pdf.php" class="btn-pdf" target="_blank">Gerar PDF</a>
+
+
         </form>
 
         <div class="tabela-container">

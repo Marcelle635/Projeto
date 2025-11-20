@@ -142,9 +142,9 @@ body::before {
 }
 
 .btn-limpar {
-  background-color: var(--cinza-claro);
-  color: var(--cinza);
-  border: 2px solid var(--cinza);
+  background-color: var(--marrom);
+  color: var(--dourado);
+  border: 2px solid var(--marrom);
   border-radius: 8px;
   padding: 12px 25px;
   cursor: pointer;
@@ -155,7 +155,7 @@ body::before {
 }
 
 .btn-limpar:hover {
-  background-color: var(--cinza);
+  background-color: var(--marrom-claro);
   color: #fff;
   transform: translateY(-1px);
 }

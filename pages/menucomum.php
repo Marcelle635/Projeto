@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: ../auth/login.php");
+    exit;
+}
+
+$usuarioLogado = $_SESSION['user']['nome'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,37 +21,65 @@
    <!--Menu com funcionalidades-->
     <header class="header">
   <section>
-    <!-- Lado esquerdo: Logo + Navegação -->
     <div class="left-side">
       <a href="#" class="logo">
         <img src="../img/logo.png" alt="logo">
       </a>
 
       <nav class="navbar">
-        <a href="comum.html">Home</a>
-        <a href="menucomum.html">Menu</a>
+        <a href="../pages/comum.html">Home</a>
+        <a href="../pages/menucomum.php">Menu</a>
+        
       </nav>
     </div>
 
-    <!-- Lado direito: Botões e links -->
+    <!-- Lado direito -->
     <div class="areas">
-      
-      
-      <!--trilho e indicador pra botar o escuro e claro-->
-      <div class="trilho">
-        <div class="indicador"></div>
-      </div> <!-- BOTÃO DESLIZANTE -->
-<label class="toggle-switch" title="Alternar modo escuro/claro">
-  <input type="checkbox" id="toggle-contraste">
-  <span class="slider"></span>
-</label>  |
- <div class="areas">
+
+      <!-- Botão escuro/claro -->
+      <label class="toggle-switch" title="Alternar modo escuro/claro">
+        <input type="checkbox" id="toggle-contraste">
+        <span class="slider"></span>
+      </label> |
+
+      <!-- Aumentar/diminuir fonte -->
       <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button> |
+
+      <!-- Menu do usuário -->
+      <?php $usuarioLogado = $_SESSION['user']['nome']; ?>
+
+      <div class="menu-usuario">
+        <span class="usuario-nome">
+          Bem-vindo, <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
+        </span>
+
+        <div class="arrow"></div>
+
+        <div class="dropdown">
+          <a href="../auth/logout.php" class="logout-btn">Sair</a>
+        </div>
       </div>
     </div>
   </section>
 </header>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu-usuario");
+
+    menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
+});
+</script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {

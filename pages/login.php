@@ -4,7 +4,7 @@ if(isset($_SESSION['user'])){
   if($_SESSION['user']['perfil'] === 'master'){
     header("Location: consulta_usuarios.php");
   } else {
-    header("Location: menucomum.html");
+    header("Location: menucomum.php");
   }
   exit;
 }

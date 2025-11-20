@@ -567,3 +567,6 @@ main.container-logs.escuro-logs td {
   margin: 0 5px;
   vertical-align: middle;
 }
+.toggle-switch {
+  margin-right: 8px; /* afasta do | à direita */
+}

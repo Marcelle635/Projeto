@@ -27,19 +27,171 @@ $result = $stmt->get_result();
     <title>Consulta de Usuários - Raízes do Café</title>
     <link rel="stylesheet" href="../css/consulta_usuarios.css">
 </head>
-<body class="dark-mode">
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="../img/logo.png" alt="logo">
-        </a>
+<body class="modo-escuro">
+ <!--Menu com funcionalidades-->
+
+     <header class="header">
+  <section>
+    <!-- Lado esquerdo: Logo + Navegação -->
+    <div class="left-side">
+      <a href="#" class="logo">
+        <img src="../img/logo.png" alt="logo">
+      </a>
         
         <nav class="navbar">
             <a href="../pages/masterhome.php">Home</a>
             <a href="../pages/mastermenu.php">Menu</a>
+        <a href="consulta_usuarios.php">Consulta de Usuários</a>
+               
             <a href="logs.php">Logs</a>
-            <a href="../auth/logout.php">Sair</a>
+           
         </nav>
-    </header>
+    </div>
+<!-- Lado direito: Botões e links -->
+    <div class="areas">
+      
+    <!--tilho e indicador pra botar o escuro e claro-->
+      <div class="trilho">
+        <div class="indicador"></div>
+      </div> <!-- BOTÃO DESLIZANTE -->
+<label class="toggle-switch" title="Alternar modo escuro/claro">
+  <input type="checkbox" id="toggle-contraste">
+  <span class="slider"></span>
+</label>  |
+ <div class="areas">
+      <button id="aumentar-fonte">A+</button>
+      <button id="diminuir-fonte">A-</button> | 
+   
+    <?php
+$usuarioLogado = $_SESSION['user']['nome'];
+?>
+<!-- Menu do usuário -->
+<div class="menu-usuario">
+    <span class="usuario-nome">Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
+    <i class="arrow"></i>
+
+    <div class="dropdown">
+        <a href="../auth/logout.php" class="logout-btn">Sair</a>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu-usuario");
+
+    menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    // Fechar dropdown ao clicar fora
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target)) {
+            menu.classList.remove("active");
+        }
+    });
+});
+</script>
+
+
+</div>
+    </div>
+  </section>
+</header>
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("toggle-contraste");
+  const consulta = document.querySelector("main.container");
+
+  // Debug: checagens iniciais
+  if (!toggle) {
+    console.error("[MODO-ESC] toggle-contraste NÃO encontrado (id). Verifique se existe apenas UM elemento com esse id.");
+    return;
+  } else {
+    console.log("[MODO-ESC] toggle encontrado.");
+  }
+
+  if (!consulta) {
+    console.error("[MODO-ESC] área 'main.container' NÃO encontrada.");
+    return;
+  } else {
+    console.log("[MODO-ESC] área da consulta encontrada.");
+  }
+
+  // Restaurar estado salvo (opcional)
+  const estadoSalvo = localStorage.getItem("escuroConsulta");
+  if (estadoSalvo === "true") {
+    toggle.checked = true;
+    consulta.classList.add("escuro-consulta");
+    console.log("[MODO-ESC] restaurado: ativo");
+  } else {
+    toggle.checked = false;
+    consulta.classList.remove("escuro-consulta");
+    console.log("[MODO-ESC] restaurado: inativo");
+  }
+
+  // Event listener
+  toggle.addEventListener("change", function () {
+    const ativo = !!this.checked;
+    consulta.classList.toggle("escuro-consulta", ativo);
+    localStorage.setItem("escuroConsulta", ativo ? "true" : "false");
+    console.log("[MODO-ESC] toggle mudou para:", ativo);
+  });
+
+  // Extra: clique na label também deve mudar (por padrão já muda, mas só pra garantir)
+  const label = toggle.closest("label");
+  if (label) {
+    label.addEventListener("click", function (e) {
+      // delay curto para deixar o checkbox atualizar antes de aplicar a classe
+      setTimeout(() => {
+        const ativo = !!toggle.checked;
+        consulta.classList.toggle("escuro-consulta", ativo);
+        localStorage.setItem("escuroConsulta", ativo ? "true" : "false");
+        console.log("[MODO-ESC] clique na label -> ativo:", ativo);
+      }, 10);
+    });
+  }
+});
+</script>
+
+
+<script>
+
+  // === FONTE A+/A- (mantenha isso) ===
+    let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
+    const html = document.documentElement;
+    html.style.fontSize = tamanhoFonte + "%";
+
+    document.getElementById("aumentar-fonte").addEventListener("click", function () {
+      if (tamanhoFonte < 70) {
+        tamanhoFonte += 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+    document.getElementById("diminuir-fonte").addEventListener("click", function () {
+      if (tamanhoFonte > 40) {
+        tamanhoFonte -= 10;
+        html.style.fontSize = tamanhoFonte + "%";
+        localStorage.setItem("tamanhoFonte", tamanhoFonte);
+      }
+    });
+
+</script>
+
+<!--Imagem do café-->
+
+    <div class="home-container">
+        <section id="home">
+          <div class="content">
+            <h3>O MELHOR CAFÉ DA REGIÃO</h3>
+            <p>Cada xícara é um convite para desacelerar e saborear o que<br> há de melhor. Trabalhamos com grãos selecionados de origem<br> brasileira, preparados com carinho e atenção aos detalhes. </p>
+            <a href="#" class="btn">Pegue o seu agora</a>
+          </div>
+        </section>
+    </div>
+
+ 
 
     <main class="container">
         <h1 class="title">Consulta de Usuários</h1>

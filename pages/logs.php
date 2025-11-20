@@ -126,8 +126,8 @@ function formatarTextoAcao($acao) {
             <nav class="navbar">
                 <a href="masterhome.php">Home</a>
                 <a href="mastermenu.php">Menu</a>
-                <a href="consulta_usuarios.php">Usuários</a>
-                <a href="logs.php">Logs de Autenticação</a>
+                <a href="consulta_usuarios.php">Consulta de Usuários</a>
+                <a href="logs.php">Logs</a>
             </nav>
         </div>
 

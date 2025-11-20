@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <head>
 <meta charset="UTF-8">
 <title>Inserir Usuário</title>
-<link rel="stylesheet" href="../css/consulta_usuarios.css">
+<link rel="stylesheet" href="../css/inserir_usuarios.css">
 <style>
 .form-container {
     background: var(--branco-transp);
@@ -94,8 +94,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <img src="../img/logo.png" alt="Logo Raízes do Café">
   </div>
   <nav class="navbar">
-    <a href="painel_master.php">Painel</a>
-    <a href="consulta_usuarios.php">Consulta</a>
+    <a href="masterhome.php">Home</a>
+        <a href="mastermenu.php">Menu</a>
+        <a href="../pages/consulta_usuarios.php">Consulta de Usuários</a>
+        <a href="logs.php">Logs</a>
     <a href="../auth/logout.php">Sair</a>
   </nav>
 </header>

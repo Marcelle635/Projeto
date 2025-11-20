@@ -204,17 +204,21 @@ input:checked + .slider:before {
   background-color: #552D0F;
 }
 
-/* ===== MENU DO USUÁRIO ===== */
+/* ===== AJUSTE DO TEXTO "BEM-VINDO" ===== */
 .menu-usuario {
   position: relative;
   display: flex;
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  color: var(--dourado);
+  font-size: 1.6rem; /* mesmo tamanho da consulta_usuarios */
 }
 
 .usuario-nome strong {
   color: var(--dourado);
+  font-size: inherit;
+  font-weight: 600;
 }
 
 .arrow {
@@ -223,7 +227,9 @@ input:checked + .slider:before {
   padding: 4px;
   transform: rotate(45deg);
   transition: 0.3s;
+  margin-top: 4px;
 }
+
 
 .menu-usuario.active .arrow {
   transform: rotate(-135deg);
@@ -240,6 +246,7 @@ input:checked + .slider:before {
   flex-direction: column;
   min-width: 120px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  z-index: 999;
 }
 
 .menu-usuario.active .dropdown {
@@ -249,6 +256,7 @@ input:checked + .slider:before {
 .dropdown a {
   color: var(--dourado);
   text-decoration: none;
+  font-size: 1.4rem;
 }
 
 .dropdown a:hover {
@@ -568,5 +576,5 @@ main.container-logs.escuro-logs td {
   vertical-align: middle;
 }
 .toggle-switch {
-  margin-right: 8px; /* afasta do | à direita */
+  margin-right: 10px; /* afasta do | à direita */
 }

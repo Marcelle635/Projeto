@@ -29,7 +29,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
       <nav class="navbar">
         <a href="../pages/comum.php">Home</a>
         <a href="../pages/menucomum.php">Menu</a>
-        
+         <a href="alterar_senha.php" class="menu-link">Alterar Senha</a>
       </nav>
     </div>
 

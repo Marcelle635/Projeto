@@ -93,17 +93,19 @@ body {
 }
 
 main {
-  background-color: #afaaaada;
-  width: 60%;
-  margin: 120px auto;
-  padding: 8px 40px;
+  background-color: rgba(175, 170, 170, 0.85);
+  width: 65%;
+  margin: 130px auto;
+  padding: 30px 40px;
   border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 h1 {
   text-align: center;
   color: var(--black);
-  margin-bottom: 13px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
 form {
@@ -112,39 +114,26 @@ form {
   gap: 20px 40px;
 }
 
-.label {
-  display: block;
-  font-weight: bold;
-  color: var(--black);
-  margin-bottom: 5px;
-}
-
-input, .select {
+input, select {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #aaa;
   border-radius: 6px;
+  font-size: 1rem;
 }
 
-input::placeholder {
-  color: black;   
-  opacity: 1;
-}
+input::placeholder { color: #000; }
 
-.full-width {
-  grid-column: span 2;
-}
+.full-width { grid-column: span 2; }
 
 .botao {
   grid-column: span 2;
-  text-align: center;
-  margin-top: 20px;
   display: flex;
-  gap: 20px;
   justify-content: center;
+  gap: 25px;
 }
 
-main button {
+.botao button {
   background-color: var(--black);
   color: var(--main-color);
   border: none;
@@ -152,25 +141,17 @@ main button {
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  flex: 1;
-  max-width: 200px;
 }
 
-main button:hover {
-  background-color: #4b2e0f;
-}
+button:hover { background-color: #4b2e0f; }
+button[type="button"] { background-color: #552D0F; }
+button[type="button"]:hover { background-color: #4b2e0f; }
 
-main button[type="button"] {
-  background-color: #6c757d;
+.mensagem {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
-
-main button[type="button"]:hover {
-  background-color: #545b62;
-}
-
-.span-required {
-  font-size: 12px;
-  display: none;
-  margin: 3px 0 0 1px;
-  color: #FF0000;
-}
+.mensagem.sucesso { background: #d4edda; color: #155724; }
+.mensagem.erro { background: #f8d7da; color: #721c24; }

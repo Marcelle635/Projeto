@@ -26,7 +26,7 @@ $erro = $_GET['erro'] ?? '';
     </div>
     <nav class="navbar">
       <a href="inicio.html">Home</a>
-      <a href="menucomum.html">Menu</a>
+      <a href="menuinicio.html">Menu</a>
       <a href="cadastro.php">Cadastre-se</a>
     </nav>
   </header>

@@ -38,7 +38,7 @@ $t = $_SESSION['tentativas_2fa'] ?? 0;
 
     <nav class="navbar">
       <a href="inicio.html">Home</a>
-      <a href="menucomum.html">Menu</a>
+      <a href="menucomum.php">Menu</a>
       <a href="cadastro.php">Cadastre-se</a>
     </nav>
   </header>

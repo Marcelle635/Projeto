@@ -461,6 +461,21 @@ body.modo-claro .feedback-section{
   background-color: #000;
 }
 
+body.modo-claro .feedback-section h2{
+   color:  #DCA153;
+}
+
+body.modo-claro .title {
+  color: #DCA153;
+}
+
+body.modo-claro .timenor{
+  color: #DCA153;
+}
+
+
+
+
 
 
 

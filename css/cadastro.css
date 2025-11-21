@@ -99,6 +99,7 @@ main {
   padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 1.6rem;
 }
 
 h1 {
@@ -106,52 +107,118 @@ h1 {
   color: var(--black);
   margin-bottom: 25px;
   letter-spacing: 1px;
+  font-size: 3rem;
 }
 
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 40px;
+  gap: 12px 40px;
 }
 
 input, select {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #aaa;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-input::placeholder { color: #000; }
+input::placeholder { 
+    color: #666; 
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
 
-.full-width { grid-column: span 2; }
+select:invalid {
+    color: #666;
+}
+
+select option:first-child {
+    color: #666;
+}
+
+select option {
+    color: #000;
+}
+
+.full-width { 
+    grid-column: span 2; 
+}
+
+.endereco-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    grid-column: span 2;
+}
+
+.campo-erro {
+    border: 2px solid #dc3545 !important;
+}
+
+.mensagem {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    grid-column: span 2;
+}
+
+.mensagem.sucesso { 
+    background: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro { 
+    background: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb;
+}
 
 .botao {
   grid-column: span 2;
   display: flex;
   justify-content: center;
   gap: 25px;
+  margin-top: 15px;
 }
 
 .botao button {
   background-color: var(--black);
   color: var(--main-color);
   border: none;
-  padding: 10px 30px;
+  padding: 12px 35px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 1.6rem;
   cursor: pointer;
 }
 
-button:hover { background-color: #4b2e0f; }
-button[type="button"] { background-color: #552D0F; }
-button[type="button"]:hover { background-color: #4b2e0f; }
-
-.mensagem {
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
+button:hover { 
+    background-color: #4b2e0f; 
+    transform: scale(1.05);
 }
-.mensagem.sucesso { background: #d4edda; color: #155724; }
-.mensagem.erro { background: #f8d7da; color: #721c24; }
+
+button[type="button"] { 
+    background-color: #552D0F; 
+}
+
+button[type="button"]:hover { 
+    background-color: #4b2e0f; 
+}
+
+input[type="date"] {
+    font-size: 1.6rem;
+}
+
+select {
+    font-size: 1.6rem;
+}
+
+input:focus, select:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px rgba(220, 161, 83, 0.5);
+}

@@ -64,6 +64,8 @@ function grava_log($conn, $usuario_id, $login_via, $acao, $detalhe, $ip){
                 <a href="comum.php">Home</a>
                 <a href="menucomum.php">Menu</a>
                 <a href="alterar_senha.php" class="menu-link">Alterar Senha</a>
+        <a href="modelo_bd.php">Modelo BD</a>
+
             </nav>
         </div>
 

@@ -19,14 +19,15 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('../img/principal.png') no-repeat center center fixed;
-  background-size: cover;
+  background: var(--bege-fundo);
   color: #2c1b0d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* ========================= HEADER ========================= */
 .header {
   background: var(--marrom);
   color: #fff;
@@ -66,7 +67,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
-  font-size: 1.5rem; /* Aumenta 20% em relação ao tamanho base */
+  font-size: 1.5rem;
 }
 
 .navbar a:hover {
@@ -80,6 +81,7 @@ body {
   gap: 15px;
 }
 
+/* ========================= TOGGLE SWITCH ========================= */
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -133,6 +135,7 @@ input:checked + .slider:before {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  transition: 0.3s;
 }
 
 .areas button:hover {
@@ -140,6 +143,7 @@ input:checked + .slider:before {
   color: var(--marrom);
 }
 
+/* ========================= MENU USUÁRIO ========================= */
 .menu-usuario {
   position: relative;
   cursor: pointer;
@@ -195,9 +199,10 @@ input:checked + .slider:before {
   background: #f5f5f5;
 }
 
+/* ========================= CONTEÚDO PRINCIPAL ========================= */
 .container-alterar-senha {
   flex: 1;
-  background-color: var(--bege-fundo);
+  background-color: transparent;
   padding: 40px 0;
   display: flex;
   justify-content: center;
@@ -227,10 +232,6 @@ input:checked + .slider:before {
   margin-bottom: 30px;
   color: #666;
   font-size: 14px;
-}
-
-.form-senha {
-  width: 100%;
 }
 
 .input-group {
@@ -271,6 +272,7 @@ input:checked + .slider:before {
   display: block;
 }
 
+/* ========================= BOTÕES ========================= */
 .botoes-container {
   display: flex;
   gap: 15px;
@@ -313,9 +315,9 @@ input:checked + .slider:before {
 .btn-voltar:hover {
   background-color: #545b62;
   transform: translateY(-1px);
-  color: #fff;
 }
 
+/* ========================= MENSAGENS ========================= */
 .mensagem {
   padding: 12px;
   border-radius: 8px;
@@ -336,41 +338,44 @@ input:checked + .slider:before {
   border: 1px solid #f5c6cb;
 }
 
-.modo-claro .form-container-senha {
-  background: rgba(255, 255, 255, 0.95);
+/* ========================= MODO CLARO E ESCURO ========================= */
+.modo-claro {
+  background-color: var(--bege-fundo);
+  color: #2c1b0d;
 }
 
-.modo-claro .input-group input {
-  background: #fff;
+.modo-escuro {
+  background-color: #000;
+  color: #f7e4c8;
 }
 
+/* ========================= RESPONSIVIDADE ========================= */
 @media (max-width: 768px) {
   .header {
-    padding: 0 20px;
     flex-direction: column;
     height: auto;
     padding: 10px 20px;
   }
-  
+
   .left-side {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .navbar {
     gap: 10px;
   }
-  
+
   .areas {
     margin-top: 10px;
     gap: 10px;
   }
-  
+
   .form-container-senha {
     width: 90%;
     padding: 30px 25px;
   }
-  
+
   .botoes-container {
     flex-direction: column;
   }

@@ -122,34 +122,36 @@ function grava_log($conn, $usuario_id, $login_via, $acao, $detalhe, $ip){
     </main>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const menu = document.querySelector(".menu-usuario");
-        menu.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
-        document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target)) {
-                menu.classList.remove("active");
-            }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu-usuario");
+    menu.addEventListener("click", () => menu.classList.toggle("active"));
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target)) menu.classList.remove("active");
+    });
 
-        const checkbox = document.getElementById("toggle-contraste");
-        const body = document.body;
-        const modoSalvo = localStorage.getItem("contrasteConteudo") || "escuro";
-        if (modoSalvo === "claro") {
+    const checkbox = document.getElementById("toggle-contraste");
+    const body = document.body;
+    const modoSalvo = localStorage.getItem("contrasteConteudo") || "claro";
+
+    if (modoSalvo === "escuro") {
+        body.classList.add("modo-escuro");
+        checkbox.checked = false;
+    } else {
+        body.classList.add("modo-claro");
+        checkbox.checked = true;
+    }
+
+    checkbox.addEventListener("change", function () {
+        if (this.checked) {
+            body.classList.remove("modo-escuro");
             body.classList.add("modo-claro");
-            checkbox.checked = true;
+            localStorage.setItem("contrasteConteudo", "claro");
+        } else {
+            body.classList.remove("modo-claro");
+            body.classList.add("modo-escuro");
+            localStorage.setItem("contrasteConteudo", "escuro");
         }
-        checkbox.addEventListener("change", function () {
-            if (this.checked) {
-                body.classList.add("modo-claro");
-                localStorage.setItem("contrasteConteudo", "claro");
-            } else {
-                body.classList.remove("modo-claro");
-                localStorage.setItem("contrasteConteudo", "escuro");
-            }
-        });
-
+    });
         let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
         const html = document.documentElement;
         html.style.fontSize = tamanhoFonte + "%";

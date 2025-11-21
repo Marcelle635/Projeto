@@ -194,7 +194,7 @@ function validarCPF($cpf) {
                    maxlength="14" oninput="formatarTelefone(this)">
 
             <input type="text" name="login" placeholder="Login (6 caracteres)" required 
-                   maxlength="6" oninput="this.value = this.value.replace(/[^a-zA-Z]/g,'').toUpperCase()">
+                   maxlength="6" oninput="this.value = this.value.replace(/[^a-zA-Z]/g,'')">
 
             <select name="sexo" required>
                 <option value="">Selecione o sexo</option>

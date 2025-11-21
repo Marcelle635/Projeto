@@ -25,8 +25,8 @@ $usuarioLogado = $_SESSION['user']['nome'];
                     <img src="../img/logo.png" alt="logo">
                 </a>
                 <nav class="navbar">
-                    <a href="masterhome.php">Home</a>
-                    <a href="mastermenu.php">Menu</a>
+                    <a href="consulta_usuario.php">Master</a>
+                    <a href="comum.php">Comum</a>
                 </nav>
             </div>
 

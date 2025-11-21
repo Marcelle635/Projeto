@@ -7,6 +7,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 $usuarioLogado = $_SESSION['user']['nome'];
+$perfilUsuario = $_SESSION['user']['perfil'];
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +26,18 @@ $usuarioLogado = $_SESSION['user']['nome'];
                     <img src="../img/logo.png" alt="logo">
                 </a>
                 <nav class="navbar">
-                    <a href="consulta_usuario.php">Master</a>
-                    <a href="comum.php">Comum</a>
+                    <?php if($perfilUsuario === 'master'): ?>
+                        <a href="masterhome.php">Home</a>
+                        <a href="mastermenu.php">Menu</a>
+                        <a href="consulta_usuarios.php">Consulta de Usuários</a>
+                        <a href="logs.php">Logs</a>
+                        <a href="modelo_bd.php">Modelo BD</a>
+                    <?php else: ?>
+                        <a href="comum.php">Home</a>
+                        <a href="menucomum.php">Menu</a>
+                        <a href="alterar_senha.php">Alterar Senha</a>
+                        <a href="modelo_bd.php">Modelo BD</a>
+                    <?php endif; ?>
                 </nav>
             </div>
 
@@ -42,6 +53,9 @@ $usuarioLogado = $_SESSION['user']['nome'];
                 <div class="menu-usuario">
                     <span class="usuario-nome">
                         Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong>
+                        <?php if($perfilUsuario === 'master'): ?>
+                            <span style="color: #ffd700; font-size: 1.2rem;"></span>
+                        <?php endif; ?>
                     </span>
                     <div class="arrow"></div>
                     <div class="dropdown">

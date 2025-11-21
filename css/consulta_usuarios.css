@@ -549,8 +549,6 @@ h2.title {
 main.container.escuro-consulta {
   background-color: #0f0f10; 
   color: #fff;
-  
- 
   width: 100%;
   max-width: none;
   margin: 0 auto;
@@ -598,6 +596,9 @@ main.container.escuro-consulta .btn-excluir {
   background-color: #aa1e1e ;
 }
 
+main.container.escuro-consulta .title {
+    color: #DCA153 !important;
+}
 
 
 
@@ -697,7 +698,7 @@ main.container.escuro-consulta .btn-excluir { background-color: #b02a37 ; }
 }
 
 .menu-usuario .dropdown a:hover {
-  color: white;
+  color: rgb(136, 41, 41);
 }
 
 /* Quando ativo */

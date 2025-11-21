@@ -190,7 +190,7 @@ function validarCPF($cpf) {
 
             <input type="text" name="nome_materno" placeholder="Nome materno" required>
 
-            <input type="text" name="telefone" placeholder="Telefone: (+55)XX-XXXXXXXX" required 
+            <input type="text" name="telefone" placeholder="Telefone: (+XX)XX-XXXXXXXX" required 
                    maxlength="15" oninput="formatarTelefone(this)">
 
             <input type="text" name="login" placeholder="Login (6 caracteres)" required 
@@ -333,3 +333,4 @@ document.querySelector('input[name="senha"]').addEventListener('input', function
 </body>
 
 </html>
+

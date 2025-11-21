@@ -37,8 +37,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $erros_validacao[] = "CPF inválido.";
     }
 
-    if(!preg_match('/^\(\+\d{1,3}\)\d{2}-\d{8,9}$/', $telefone)) {
-        $erros_validacao[] = "Telefone deve seguir o formato: (+XX)XX-XXXXXXXX";
+    if(!preg_match('/^\(\d{2}\)\d{4,5}-\d{4}$/', $telefone)) {
+        $erros_validacao[] = "Telefone deve seguir o formato: (XX)XXXXX-XXXX";
     }
 
     if(strlen($login) !== 6 || !preg_match('/^[a-zA-Z]+$/', $login)) {
@@ -190,8 +190,8 @@ function validarCPF($cpf) {
 
             <input type="text" name="nome_materno" placeholder="Nome materno" required>
 
-            <input type="text" name="telefone" placeholder="Telefone: (+XX)XX-XXXXXXXX" required 
-                   maxlength="15" oninput="formatarTelefone(this)">
+            <input type="text" name="telefone" placeholder="Telefone: (XX)XXXXX-XXXX" required 
+                   maxlength="14" oninput="formatarTelefone(this)">
 
             <input type="text" name="login" placeholder="Login (6 caracteres)" required 
                    maxlength="6" oninput="this.value = this.value.replace(/[^a-zA-Z]/g,'').toUpperCase()">
@@ -272,12 +272,12 @@ function formatarTelefone(campo) {
     let telefone = campo.value.replace(/\D/g, '');
     if (telefone.length > 11) telefone = telefone.substring(0, 11);
     
-    if (telefone.length > 2) {
-        telefone = telefone.replace(/(\d{2})(\d{0,9})/, "(+$1)$2");
-        if (telefone.length > 7) {
-            telefone = telefone.replace(/(\(\+\d{2}\))(\d{5})/, "$1$2-");
-        } else if (telefone.length > 6) {
-            telefone = telefone.replace(/(\(\+\d{2}\))(\d{4})/, "$1$2-");
+    if (telefone.length > 6) {
+        telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, "($1)$2-$3");
+    } else if (telefone.length > 2) {
+        telefone = telefone.replace(/(\d{2})(\d{0,5})/, "($1)$2");
+        if (telefone.length > 8) {
+            telefone = telefone.replace(/(\(\d{2}\))(\d{5})/, "$1$2-");
         }
     }
     campo.value = telefone;
@@ -331,6 +331,4 @@ document.querySelector('input[name="senha"]').addEventListener('input', function
 });
 </script>
 </body>
-
 </html>
-

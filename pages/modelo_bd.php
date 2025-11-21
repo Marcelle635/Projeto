@@ -31,12 +31,10 @@ $perfilUsuario = $_SESSION['user']['perfil'];
                         <a href="mastermenu.php">Menu</a>
                         <a href="consulta_usuarios.php">Consulta de Usuários</a>
                         <a href="logs.php">Logs</a>
-                        <a href="modelo_bd.php">Modelo BD</a>
                     <?php else: ?>
                         <a href="comum.php">Home</a>
                         <a href="menucomum.php">Menu</a>
                         <a href="alterar_senha.php">Alterar Senha</a>
-                        <a href="modelo_bd.php">Modelo BD</a>
                     <?php endif; ?>
                 </nav>
             </div>
@@ -127,3 +125,4 @@ $perfilUsuario = $_SESSION['user']['perfil'];
     </script>
 </body>
 </html>
+

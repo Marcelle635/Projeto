@@ -37,8 +37,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $erros_validacao[] = "CPF inválido.";
     }
 
-    if(!preg_match('/^\(\+55\)\d{2}-\d{8,9}$/', $telefone)) {
-        $erros_validacao[] = "Telefone deve seguir o formato: (+55)XX-XXXXXXXX";
+    if(!preg_match('/^\(\+\d{1,3}\)\d{2}-\d{8,9}$/', $telefone)) {
+        $erros_validacao[] = "Telefone deve seguir o formato: (+XX)XX-XXXXXXXX";
     }
 
     if(strlen($login) !== 6 || !preg_match('/^[a-zA-Z]+$/', $login)) {
@@ -273,7 +273,12 @@ function formatarTelefone(campo) {
     if (telefone.length > 11) telefone = telefone.substring(0, 11);
     
     if (telefone.length > 2) {
-        telefone = telefone.replace(/(\d{2})(\d{0,9})/, "(+55)$1-$2");
+        telefone = telefone.replace(/(\d{2})(\d{0,9})/, "(+$1)$2");
+        if (telefone.length > 7) {
+            telefone = telefone.replace(/(\(\+\d{2}\))(\d{5})/, "$1$2-");
+        } else if (telefone.length > 6) {
+            telefone = telefone.replace(/(\(\+\d{2}\))(\d{4})/, "$1$2-");
+        }
     }
     campo.value = telefone;
 }
@@ -326,4 +331,5 @@ document.querySelector('input[name="senha"]').addEventListener('input', function
 });
 </script>
 </body>
+
 </html>

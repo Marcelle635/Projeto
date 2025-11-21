@@ -131,6 +131,8 @@ function formatarTextoAcao($acao) {
         <a href="../pages/mastermenu.php">Menu</a>
         <a href="consulta_usuarios.php">Consulta de Usuários</a>
         <a href="logs.php">Logs</a>
+        <a href="modelo_bd.php">Modelo BD</a>
+
       </nav>
     </div>
 

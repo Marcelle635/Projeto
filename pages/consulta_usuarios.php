@@ -44,6 +44,7 @@ $result = $stmt->get_result();
         <a href="consulta_usuarios.php">Consulta de Usuários</a>
                
             <a href="logs.php">Logs</a>
+        <a href="modelo_bd.php">Modelo BD</a>
            
         </nav>
     </div>

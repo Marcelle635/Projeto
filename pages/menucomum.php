@@ -29,6 +29,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
         <a href="../pages/comum.php">Home</a>
         <a href="../pages/menucomum.php">Menu</a>
         <a href="alterar_senha.php" class="menu-link">Alterar Senha</a>
+        <a href="modelo_bd.php">Modelo BD</a>
       </nav>
     </div>
 

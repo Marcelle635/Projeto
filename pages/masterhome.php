@@ -19,10 +19,8 @@ $usuarioLogado = $_SESSION['user']['nome'];
     <link rel="stylesheet" href="../css/master.css">
 </head>
 <body class="dark-mode">
-    <!--Menu com funcionalidades-->
     <header class="header">
   <section>
-    <!-- Lado esquerdo: Logo + Navegação -->
     <div class="left-side">
       <a href="#" class="logo">
         <img src="../img/logo.png" alt="logo">
@@ -33,10 +31,9 @@ $usuarioLogado = $_SESSION['user']['nome'];
         <a href="mastermenu.php">Menu</a>
         <a href="../pages/consulta_usuarios.php">Consulta de Usuários</a>
         <a href="logs.php">Logs</a>
+        <a href="modelo_bd.php">Modelo BD</a>
       </nav>
     </div>
-
-    <!-- Lado direito: Botões e links -->
     <div class="areas">
      
 
@@ -47,7 +44,7 @@ $usuarioLogado = $_SESSION['user']['nome'];
         
         <div class="indicador"> </div>
         
-      </div>  <!-- BOTÃO DESLIZANTE -->
+      </div>  
 <label class="toggle-switch" title="Alternar modo escuro/claro">
   <input type="checkbox" id="toggle-contraste">
   <span class="slider"></span>
@@ -55,7 +52,6 @@ $usuarioLogado = $_SESSION['user']['nome'];
        <div class="areas">
       <button id="aumentar-fonte">A+</button>
       <button id="diminuir-fonte">A-</button> |
-    <!-- Menu do usuário -->
 <div class="menu-usuario">
     <span class="usuario-nome">Bem-vindo(a), <strong><?php echo htmlspecialchars($usuarioLogado); ?></strong></span>
     <i class="arrow"></i>
@@ -73,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         menu.classList.toggle("active");
     });
 
-    // Fechar dropdown ao clicar fora
     document.addEventListener("click", (e) => {
         if (!menu.contains(e.target)) {
             menu.classList.remove("active");
@@ -92,14 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkbox = document.getElementById("toggle-contraste");
     const body = document.body;
 
-    // Carregar estado salvo
     const modoSalvo = localStorage.getItem("contrasteConteudo") || "escuro";
     if (modoSalvo === "claro") {
       body.classList.add("modo-claro");
       checkbox.checked = true;
     }
 
-    // Alternar ao clicar
     checkbox.addEventListener("change", function () {
       if (this.checked) {
         body.classList.add("modo-claro");
@@ -110,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // === FONTE A+/A- (mantenha isso) ===
     let tamanhoFonte = localStorage.getItem("tamanhoFonte") ? parseInt(localStorage.getItem("tamanhoFonte")) : 70;
     const html = document.documentElement;
     html.style.fontSize = tamanhoFonte + "%";
@@ -133,10 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
-
-
-
-<!--Imagem do café-->
     <div class="home-container">
         <section id="home">
           <div class="content">
@@ -146,13 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </section>
     </div>
-   
-  
-    
-       
-          
-         
-            <!-- SOBRE NÓS -->
+
                <section class="about" id="about">
           <h2 class="title">Sobre Nós</h2>
           <div class="row">
@@ -165,8 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
           </div>
              </section>
-         
-             <!-- FEEDBACK -->
+
            <section class="feedback-section">
              <h2>Feedback</h2>
              
@@ -191,10 +172,6 @@ document.addEventListener("DOMContentLoaded", () => {
            </section>
           </div>
         
-      
-      
-
-  <!-- RODAPÉ -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-col">

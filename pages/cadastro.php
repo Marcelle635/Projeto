@@ -31,7 +31,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $stmt->bind_param("ssssssssss", $nome, $email, $cpf, $telefone, $data_nasc, $nome_materno, $sexo, $endereco, $login, $senha_hash);
         
         if($stmt->execute()){
-            $mensagem = "Cadastro realizado com sucesso!";
+            header("Location: login.php");
+            exit();
         } else {
             $erro = "Erro ao cadastrar usuário. Tente novamente.";
         }
@@ -119,4 +120,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </body>
+
 </html>

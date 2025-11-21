@@ -61,7 +61,6 @@ if($campo === 'data_nasc'){
 if($ok){
     grava_log($conn, $uid, $user['login'] ?? null, '2fa_ok', "2FA correta (campo: $campo)", $ip);
 
-    // Login bem-sucedido - criar sessão final
     $_SESSION['user'] = [
         'id' => $user['id'],
         'nome' => $user['nome'],
@@ -71,7 +70,7 @@ if($ok){
 
     unset($_SESSION['user_temp'], $_SESSION['campo2fa'], $_SESSION['tentativas_2fa']);
 
-    header("Location: ../pages/menucomum.html");
+    header("Location: ../pages/menucomum.php");
     exit;
 } else {
     $tent++;

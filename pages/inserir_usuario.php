@@ -98,6 +98,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         <a href="mastermenu.php">Menu</a>
         <a href="../pages/consulta_usuarios.php">Consulta de Usuários</a>
         <a href="logs.php">Logs</a>
+        <a href="modelo_bd.php">Modelo BD</a>
     <a href="../auth/logout.php">Sair</a>
   </nav>
 </header>

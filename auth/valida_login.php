@@ -44,36 +44,22 @@ if(!$login_ok){
     exit;
 }
 
-if($user['perfil'] === 'comum') {
-    $_SESSION['user_temp'] = [
-        'id' => $user['id'],
-        'nome' => $user['nome'],
-        'login' => $user['login'],
-        'perfil' => $user['perfil'],
-        'nome_materno' => $user['nome_materno'],
-        'data_nasc' => $user['data_nasc'],
-        'endereco' => $user['endereco']
-    ];
-    
-    $_SESSION['tentativas_2fa'] = 0;
-    
-    $perguntas = ['nome_materno', 'data_nasc', 'endereco'];
-    $_SESSION['campo2fa'] = $perguntas[array_rand($perguntas)];
-    
-    grava_log($conn, $user['id'], $login, 'login_ok', 'senha validada, redirecionando para 2FA', $ip);
-    header("Location: ../pages/2fa.php");
-    exit;
-} else {
+$_SESSION['user_temp'] = [
+    'id' => $user['id'],
+    'nome' => $user['nome'],
+    'login' => $user['login'],
+    'perfil' => $user['perfil'],
+    'nome_materno' => $user['nome_materno'],
+    'data_nasc' => $user['data_nasc'],
+    'endereco' => $user['endereco']
+];
 
-    $_SESSION['user'] = [
-        'id' => $user['id'],
-        'nome' => $user['nome'],
-        'login' => $user['login'],
-        'perfil' => $user['perfil']
-    ];
-    
-    grava_log($conn, $user['id'], $login, 'login_ok', 'login direto (perfil master)', $ip);
-    header("Location: ../pages/consulta_usuarios.php");
-    exit;
-}
+$_SESSION['tentativas_2fa'] = 0;
+
+$perguntas = ['nome_materno', 'data_nasc', 'endereco'];
+$_SESSION['campo2fa'] = $perguntas[array_rand($perguntas)];
+
+grava_log($conn, $user['id'], $login, 'login_ok', 'senha validada, redirecionando para 2FA', $ip);
+header("Location: ../pages/2fa.php");
+exit;
 ?>

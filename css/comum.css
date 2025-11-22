@@ -515,7 +515,18 @@ body.modo-claro .feedback-section{
   transform: rotate(-135deg);
 }
 
-
 .menu-usuario {
     margin-left: 15px; /* Aumente se quiser mais espaço */
+}
+
+body.modo-claro h2.title{
+  color: #DCA153;
+}
+
+body.modo-claro .feedback-section h2{
+  color: #DCA153;
+}
+
+body.modo-claro .timenor{
+  color: #DCA153;
 }

@@ -70,6 +70,43 @@ if($ok){
 
     unset($_SESSION['user_temp'], $_SESSION['campo2fa'], $_SESSION['tentativas_2fa']);
 
+    if($user['perfil'] === 'master') {
+        header("Location: ../pages/masterhome.php");
+    } else {
+        header("Location: ../pages/menucomum.php");
+    }
+    exit;
+} else {
+    $tent++;
+    $_SESSION['tentativas_2fa'] = $tent;
+
+    grava_log($conn, $uid, $user['login'] ?? null, '2fa_fail', "Resposta incorreta (campo: $campo) tentativa $tent", $ip);
+
+    if($tent >= 3){
+        session_destroy();
+        header("Location: ../pages/login.php?erro=3tentativas");
+        exit;
+    } else {
+        $perguntas = ['nome_materno', 'data_nasc', 'endereco'];
+        $_SESSION['campo2fa'] = $perguntas[array_rand($perguntas)];
+        
+        header("Location: ../pages/2fa.php?erro=1");
+        exit;
+    }
+}
+?>
+if($ok){
+    grava_log($conn, $uid, $user['login'] ?? null, '2fa_ok', "2FA correta (campo: $campo)", $ip);
+
+    $_SESSION['user'] = [
+        'id' => $user['id'],
+        'nome' => $user['nome'],
+        'login' => $user['login'],
+        'perfil' => $user['perfil']
+    ];
+
+    unset($_SESSION['user_temp'], $_SESSION['campo2fa'], $_SESSION['tentativas_2fa']);
+
     header("Location: ../pages/menucomum.php");
     exit;
 } else {

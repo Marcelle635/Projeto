@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('America/Sao_Paulo');
+
 session_start();
 require_once("../config/db.php");
 
@@ -387,4 +389,5 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </footer>
 </body>
+
 </html>
